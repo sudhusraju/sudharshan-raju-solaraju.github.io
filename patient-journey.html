@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patient Journey Analytics | Sudharshan Raju Solaraju</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2a;
+    --navy-light: #1a2d42;
+    --gold: #e8a838;
+    --gold-light: #f5c96a;
+    --teal: #1d9e75;
+    --teal-light: #e1f5ee;
+    --coral: #d85a30;
+    --cream: #f8f4ee;
+    --cream-dark: #ede8e0;
+    --text-dark: #1a1a2e;
+    --text-muted: #5a6475;
+    --border: rgba(13,27,42,0.1);
+    --blue: #2563eb;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--text-dark); }
+
+  /* NAV */
+  nav {
+    background:rgba(13,27,42,0.97);
+    backdrop-filter:blur(12px);
+    padding:1.25rem 2rem;
+    display:flex; align-items:center; justify-content:space-between;
+    position:sticky; top:0; z-index:100;
+    border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+  .nav-logo { font-family:'DM Serif Display',serif; font-size:1.1rem; color:#fff; text-decoration:none; }
+  .nav-logo span { color:var(--gold); }
+  .nav-back { color:rgba(255,255,255,0.55); font-size:13px; text-decoration:none; display:flex; align-items:center; gap:6px; transition:color 0.2s; }
+  .nav-back:hover { color:var(--gold); }
+
+  /* HERO */
+  .hero {
+    background:var(--navy);
+    padding:5rem 2rem 4rem;
+    position:relative; overflow:hidden;
+  }
+  .hero::before {
+    content:''; position:absolute; top:-150px; right:-150px;
+    width:500px; height:500px; border-radius:50%;
+    border:1px solid rgba(29,158,117,0.12);
+  }
+  .hero::after {
+    content:''; position:absolute; bottom:-200px; left:-100px;
+    width:500px; height:500px; border-radius:50%;
+    border:1px solid rgba(232,168,56,0.08);
+  }
+  .hero-inner { max-width:1000px; margin:0 auto; position:relative; z-index:1; }
+
+  .breadcrumb {
+    font-size:12px; letter-spacing:0.15em; text-transform:uppercase;
+    color:rgba(255,255,255,0.35); margin-bottom:1.5rem;
+    display:flex; align-items:center; gap:8px;
+  }
+  .breadcrumb span { color:var(--teal); }
+
+  .hero-tag {
+    display:inline-flex; align-items:center; gap:8px;
+    background:rgba(29,158,117,0.12); border:1px solid rgba(29,158,117,0.3);
+    color:var(--teal); font-size:12px; letter-spacing:0.1em;
+    text-transform:uppercase; padding:6px 14px; border-radius:2px;
+    margin-bottom:1.5rem;
+  }
+  .hero-tag::before { content:'●'; font-size:8px; }
+
+  .hero h1 {
+    font-family:'DM Serif Display',serif;
+    font-size:clamp(2.2rem,5vw,4rem);
+    color:#fff; line-height:1.1; margin-bottom:1rem;
+  }
+  .hero h1 em { color:var(--gold); font-style:italic; }
+
+  .hero-sub {
+    color:rgba(255,255,255,0.5); font-size:1rem;
+    line-height:1.75; max-width:600px; margin-bottom:2.5rem; font-weight:300;
+  }
+
+  .hero-meta {
+    display:flex; gap:2rem; flex-wrap:wrap;
+    padding-top:2rem; border-top:1px solid rgba(255,255,255,0.08);
+  }
+  .meta-item label {
+    display:block; font-size:11px; letter-spacing:0.12em;
+    text-transform:uppercase; color:rgba(255,255,255,0.3); margin-bottom:4px;
+  }
+  .meta-item span { font-size:14px; color:rgba(255,255,255,0.8); }
+
+  /* KPI STRIP */
+  .kpi-strip {
+    background:var(--navy-light);
+    border-bottom:1px solid rgba(255,255,255,0.06);
+    padding:1.5rem 2rem;
+  }
+  .kpi-strip-inner {
+    max-width:1000px; margin:0 auto;
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+    gap:1rem;
+  }
+  .kpi-card {
+    text-align:center; padding:1rem;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.08); border-radius:6px;
+  }
+  .kpi-num {
+    font-family:'DM Serif Display',serif;
+    font-size:1.8rem; display:block; line-height:1;
+    margin-bottom:4px;
+  }
+  .kpi-label { font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.4); }
+  .kpi-gold { color:var(--gold); }
+  .kpi-teal { color:var(--teal); }
+  .kpi-coral { color:var(--coral); }
+  .kpi-blue { color:#60a5fa; }
+
+  /* MAIN CONTENT */
+  .content { max-width:1000px; margin:0 auto; padding:4rem 2rem; }
+
+  /* SECTION BLOCKS */
+  .case-section { margin-bottom:4rem; }
+
+  .section-eyebrow {
+    display:flex; align-items:center; gap:10px;
+    font-size:11px; letter-spacing:0.2em; text-transform:uppercase;
+    margin-bottom:1rem;
+  }
+  .eyebrow-num {
+    width:28px; height:28px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:12px; font-weight:600; flex-shrink:0;
+  }
+  .num-gold { background:rgba(232,168,56,0.15); color:var(--gold); }
+  .num-teal { background:rgba(29,158,117,0.15); color:var(--teal); }
+  .num-coral { background:rgba(216,90,48,0.15); color:var(--coral); }
+  .num-blue { background:rgba(37,99,235,0.12); color:var(--blue); }
+  .eyebrow-text-gold { color:var(--gold); }
+  .eyebrow-text-teal { color:var(--teal); }
+  .eyebrow-text-coral { color:var(--coral); }
+  .eyebrow-text-blue { color:var(--blue); }
+
+  .case-section h2 {
+    font-family:'DM Serif Display',serif;
+    font-size:clamp(1.6rem,3vw,2.2rem);
+    color:var(--navy); line-height:1.2; margin-bottom:1.25rem;
+  }
+
+  .case-section p {
+    color:var(--text-muted); line-height:1.85;
+    font-size:1rem; margin-bottom:1rem;
+  }
+
+  /* PROBLEM CARDS */
+  .problem-grid {
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:1rem; margin-top:1.5rem;
+  }
+  .problem-card {
+    background:#fff; border:1px solid var(--border);
+    border-radius:8px; padding:1.5rem;
+    border-left:3px solid var(--coral);
+  }
+  .problem-card h4 {
+    font-size:14px; font-weight:600; color:var(--navy);
+    margin-bottom:0.5rem; display:flex; align-items:center; gap:8px;
+  }
+  .problem-card h4 .icon { font-size:18px; }
+  .problem-card p { font-size:13px; color:var(--text-muted); line-height:1.7; margin:0; }
+
+  /* SOLUTION FEATURES */
+  .solution-grid {
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:1rem; margin-top:1.5rem;
+  }
+  .solution-card {
+    background:#fff; border:1px solid var(--border);
+    border-radius:8px; padding:1.5rem;
+    border-left:3px solid var(--teal);
+    transition:transform 0.2s;
+  }
+  .solution-card:hover { transform:translateY(-3px); }
+  .solution-card h4 {
+    font-size:14px; font-weight:600; color:var(--navy);
+    margin-bottom:0.5rem; display:flex; align-items:center; gap:8px;
+  }
+  .solution-card p { font-size:13px; color:var(--text-muted); line-height:1.7; margin:0; }
+
+  /* AUDIENCE TABLE */
+  .audience-grid {
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:1rem; margin-top:1.5rem;
+  }
+  .audience-card {
+    background:#fff; border:1px solid var(--border);
+    border-radius:8px; padding:1.5rem; text-align:center;
+  }
+  .audience-icon { font-size:2rem; margin-bottom:0.75rem; display:block; }
+  .audience-card h4 { font-size:14px; font-weight:600; color:var(--navy); margin-bottom:0.4rem; }
+  .audience-card p { font-size:12px; color:var(--text-muted); line-height:1.6; margin:0; }
+
+  /* ACHIEVEMENTS */
+  .achievement-grid {
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:1rem; margin-top:1.5rem;
+  }
+  .achievement-card {
+    background:var(--navy);
+    border-radius:8px; padding:1.75rem;
+    position:relative; overflow:hidden;
+  }
+  .achievement-card::after {
+    content:''; position:absolute; bottom:-20px; right:-20px;
+    width:80px; height:80px; border-radius:50%;
+    background:rgba(232,168,56,0.08);
+  }
+  .ach-num {
+    font-family:'DM Serif Display',serif;
+    font-size:2.5rem; color:var(--gold);
+    display:block; line-height:1; margin-bottom:0.5rem;
+  }
+  .ach-title { font-size:13px; font-weight:600; color:#fff; margin-bottom:0.4rem; }
+  .ach-desc { font-size:12px; color:rgba(255,255,255,0.45); line-height:1.6; }
+
+  /* TECH STACK */
+  .tech-list {
+    display:flex; flex-wrap:wrap; gap:10px; margin-top:1.25rem;
+  }
+  .tech-tag {
+    background:var(--navy); color:rgba(255,255,255,0.8);
+    font-size:12px; padding:7px 16px; border-radius:2px;
+    letter-spacing:0.05em; display:flex; align-items:center; gap:6px;
+  }
+  .tech-tag span { color:var(--gold); font-size:14px; }
+
+  /* DASHBOARD PREVIEW */
+  .dashboard-preview {
+    background:var(--navy-light);
+    border-radius:10px; overflow:hidden;
+    border:1px solid rgba(255,255,255,0.08);
+    margin:2rem 0;
+  }
+  .preview-bar {
+    background:rgba(0,0,0,0.3); padding:10px 16px;
+    display:flex; align-items:center; gap:8px;
+  }
+  .dot { width:10px; height:10px; border-radius:50%; }
+  .dot-r { background:#ff5f57; }
+  .dot-y { background:#ffbd2e; }
+  .dot-g { background:#28ca41; }
+  .preview-title { font-size:12px; color:rgba(255,255,255,0.4); margin-left:auto; letter-spacing:0.08em; }
+  .preview-img {
+    width:100%; display:block;
+    border-top:1px solid rgba(255,255,255,0.05);
+  }
+
+  /* DIVIDER */
+  .divider {
+    height:1px; background:var(--border);
+    margin:3rem 0;
+  }
+
+  /* QUOTE */
+  .insight-box {
+    background:var(--navy); border-radius:8px;
+    padding:2rem 2.5rem; margin:2rem 0;
+    border-left:4px solid var(--gold);
+    position:relative;
+  }
+  .insight-box p {
+    font-family:'DM Serif Display',serif;
+    font-size:1.2rem; color:#fff;
+    line-height:1.6; margin:0;
+    font-style:italic;
+  }
+  .insight-box cite {
+    display:block; margin-top:1rem;
+    font-size:12px; color:var(--gold);
+    letter-spacing:0.1em; text-transform:uppercase;
+    font-style:normal;
+  }
+
+  /* BACK BUTTON */
+  .back-btn {
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--navy); color:#fff;
+    padding:12px 28px; border-radius:4px;
+    text-decoration:none; font-size:14px;
+    font-weight:500; margin-top:1rem;
+    transition:background 0.2s;
+  }
+  .back-btn:hover { background:var(--navy-light); }
+
+  /* FOOTER */
+  footer {
+    background:#080f18; text-align:center;
+    padding:2rem; color:rgba(255,255,255,0.25);
+    font-size:12px; letter-spacing:0.05em;
+  }
+  footer span { color:var(--gold); }
+
+  @media(max-width:768px) {
+    .hero { padding:3rem 1.25rem 2.5rem; }
+    .content { padding:2.5rem 1.25rem; }
+    .hero-meta { gap:1.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">S<span>.</span>Raju</a>
+  <a href="index.html" class="nav-back">← Back to Portfolio</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="breadcrumb">Portfolio <span>›</span> Healthcare Analytics <span>›</span> Case Study</div>
+    <div class="hero-tag">Power BI · Healthcare · End-to-End Analytics</div>
+    <h1>Patient Journey <em>Analytics</em> Dashboard</h1>
+    <p class="hero-sub">
+      A comprehensive end-to-end Power BI solution tracking every stage of a patient's hospital experience — from first visit through admission, treatment, discharge, and medication — enabling data-driven decisions across clinical and operational teams.
+    </p>
+    <div class="hero-meta">
+      <div class="meta-item"><label>Domain</label><span>Healthcare / Hospital Operations</span></div>
+      <div class="meta-item"><label>Tool</label><span>Microsoft Power BI</span></div>
+      <div class="meta-item"><label>Last Refreshed</label><span>06 June 2026</span></div>
+      <div class="meta-item"><label>Data Points</label><span>12K+ Patient Visits</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- KPI STRIP -->
+<div class="kpi-strip">
+  <div class="kpi-strip-inner">
+    <div class="kpi-card">
+      <span class="kpi-num kpi-gold">12K</span>
+      <span class="kpi-label">Total Visits</span>
+    </div>
+    <div class="kpi-card">
+      <span class="kpi-num kpi-coral">6,032</span>
+      <span class="kpi-label">ER Visits</span>
+    </div>
+    <div class="kpi-card">
+      <span class="kpi-num kpi-blue">2,000</span>
+      <span class="kpi-label">Total Admissions</span>
+    </div>
+    <div class="kpi-card">
+      <span class="kpi-num kpi-teal">1,400</span>
+      <span class="kpi-label">Total Discharges</span>
+    </div>
+    <div class="kpi-card">
+      <span class="kpi-num kpi-gold">7.55</span>
+      <span class="kpi-label">Avg Length of Stay</span>
+    </div>
+    <div class="kpi-card">
+      <span class="kpi-num kpi-teal">16.67%</span>
+      <span class="kpi-label">Admission Rate</span>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="content">
+
+  <!-- DASHBOARD PREVIEW -->
+  <div class="dashboard-preview">
+    <div class="preview-bar">
+      <div class="dot dot-r"></div>
+      <div class="dot dot-y"></div>
+      <div class="dot dot-g"></div>
+      <span class="preview-title">Patient Journey Analytics · Power BI Desktop</span>
+    </div>
+    <img src="1780812253222_image.png" alt="Patient Journey Analytics Dashboard" class="preview-img" />
+  </div>
+
+  <!-- PROBLEM STATEMENT -->
+  <div class="case-section">
+    <div class="section-eyebrow">
+      <div class="eyebrow-num num-coral">01</div>
+      <span class="eyebrow-text-coral">Problem Statement</span>
+    </div>
+    <h2>The Challenge Facing Hospital Operations</h2>
+    <p>
+      Hospitals manage thousands of patient interactions daily across multiple departments, wards, clinics, and care pathways. Without a unified view, critical operational and clinical data remained locked in siloed systems — making it nearly impossible for leadership to spot trends, manage capacity, or improve patient outcomes in real time.
+    </p>
+
+    <div class="problem-grid">
+      <div class="problem-card">
+        <h4><span class="icon">📊</span> Fragmented Data Silos</h4>
+        <p>Patient visit data, admission records, discharge summaries, and medication logs existed in separate systems with no single consolidated view for decision-makers.</p>
+      </div>
+      <div class="problem-card">
+        <h4><span class="icon">⏱️</span> No Real-Time Visibility</h4>
+        <p>Hospital administrators had no live tracking of ER congestion, ward occupancy, or admission rates — leading to reactive rather than proactive capacity management.</p>
+      </div>
+      <div class="problem-card">
+        <h4><span class="icon">🏥</span> Unknown Patient Flow Patterns</h4>
+        <p>The full patient journey from first visit → diagnosis → admission → discharge → medication was invisible, making it impossible to identify bottlenecks or inefficiencies.</p>
+      </div>
+      <div class="problem-card">
+        <h4><span class="icon">💊</span> Medication Tracking Gaps</h4>
+        <p>No clear picture of which medications were being distributed at scale, hindering pharmacy planning, procurement, and clinical protocol reviews.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SOLUTION -->
+  <div class="case-section">
+    <div class="section-eyebrow">
+      <div class="eyebrow-num num-teal">02</div>
+      <span class="eyebrow-text-teal">Solution</span>
+    </div>
+    <h2>An End-to-End Patient Intelligence Platform</h2>
+    <p>
+      I designed and built a fully interactive Power BI dashboard that unifies every stage of the patient journey into a single, filterable, real-time report — empowering clinical leads and hospital administrators with actionable intelligence at a glance.
+    </p>
+
+    <div class="insight-box">
+      <p>"Every patient touchpoint — from the moment they walk in to the medication they leave with — is now visible in one place, updated daily."</p>
+      <cite>— Dashboard Design Philosophy</cite>
+    </div>
+
+    <div class="solution-grid">
+      <div class="solution-card">
+        <h4><span>🔀</span> Patient Journey Flow Visual</h4>
+        <p>A funnel-style flow chart mapping Visits → Diagnosed → Admissions → Discharged → Medication, giving leadership an instant bird's-eye view of patient throughput.</p>
+      </div>
+      <div class="solution-card">
+        <h4><span>📈</span> Visit & Admission Trend Analysis</h4>
+        <p>Dual time-series line chart tracking total visits vs. admissions over months — enabling seasonal pattern recognition and forward capacity planning.</p>
+      </div>
+      <div class="solution-card">
+        <h4><span>🏨</span> Ward-Level Admissions Breakdown</h4>
+        <p>Comparative bar chart across Ward A, B, C, ICU, and CCU — helping operations teams allocate staffing and beds efficiently based on real demand.</p>
+      </div>
+      <div class="solution-card">
+        <h4><span>🩺</span> Diagnosis by Visit Type</h4>
+        <p>Ranked horizontal bar showing top diagnoses (Type 2 Diabetes, Hypertension, Pneumonia, etc.) — critical for clinical teams to align resources and protocols.</p>
+      </div>
+      <div class="solution-card">
+        <h4><span>💊</span> Medicine Distribution Tracker</h4>
+        <p>Top 10 medications distributed ranked by volume (Ceftriaxone, Paracetamol, Omeprazole, etc.) — directly supporting pharmacy inventory and procurement decisions.</p>
+      </div>
+      <div class="solution-card">
+        <h4><span>🎯</span> Dynamic Slicers & Filters</h4>
+        <p>7 interactive slicers — Region, Clinic, Visit Type, Visit Date, Nationality, Gender, Age Group — enabling personalised drill-down for any user across any segment.</p>
+      </div>
+      <div class="solution-card">
+        <h4><span>❤️</span> Patient Health Outcome Analysis</h4>
+        <p>Donut chart visualising patient outcomes: Recovered, Stable, Follow-up Required, Improved — giving clinical teams a quality-of-care performance metric.</p>
+      </div>
+      <div class="solution-card">
+        <h4><span>📉</span> Admission Rate % Over Time</h4>
+        <p>Volatility chart showing admission rate fluctuation from March to November 2025, revealing spikes and dips that signal seasonal illness patterns or operational issues.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- AUDIENCE -->
+  <div class="case-section">
+    <div class="section-eyebrow">
+      <div class="eyebrow-num num-blue">03</div>
+      <span class="eyebrow-text-blue">Target Audience</span>
+    </div>
+    <h2>Who This Dashboard Serves</h2>
+    <p>Designed with role-based insights in mind — every stakeholder from the C-suite to the pharmacy desk gains direct value from this unified view.</p>
+
+    <div class="audience-grid">
+      <div class="audience-card">
+        <span class="audience-icon">🏛️</span>
+        <h4>Hospital CEO / CMO</h4>
+        <p>High-level KPIs, admission rates, discharge trends and patient outcome summaries for strategic decisions.</p>
+      </div>
+      <div class="audience-card">
+        <span class="audience-icon">🏥</span>
+        <h4>Operations Manager</h4>
+        <p>Ward capacity, visit volumes by clinic, and length-of-stay metrics to optimise daily hospital operations.</p>
+      </div>
+      <div class="audience-card">
+        <span class="audience-icon">👨‍⚕️</span>
+        <h4>Clinical / Medical Lead</h4>
+        <p>Diagnosis trends, ER visit patterns, and patient health outcomes to guide clinical protocols and staffing.</p>
+      </div>
+      <div class="audience-card">
+        <span class="audience-icon">💊</span>
+        <h4>Pharmacy Manager</h4>
+        <p>Medicine distribution volumes and top prescribed drugs to drive procurement planning and stock management.</p>
+      </div>
+      <div class="audience-card">
+        <span class="audience-icon">📋</span>
+        <h4>Data & Analytics Team</h4>
+        <p>Underlying data models, DAX measures, and Power Query transformations as a reusable BI foundation.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ACHIEVEMENTS -->
+  <div class="case-section">
+    <div class="section-eyebrow">
+      <div class="eyebrow-num num-gold">04</div>
+      <span class="eyebrow-text-gold">Key Achievements</span>
+    </div>
+    <h2>What This Dashboard Delivers</h2>
+    <p>Measurable impact across operational efficiency, clinical visibility, and decision-making speed.</p>
+
+    <div class="achievement-grid">
+      <div class="achievement-card">
+        <span class="ach-num">360°</span>
+        <div class="ach-title">Full Patient Journey Visibility</div>
+        <div class="ach-desc">First-ever unified view from visit to discharge to medication for 12,000+ patient records.</div>
+      </div>
+      <div class="achievement-card">
+        <span class="ach-num">7</span>
+        <div class="ach-title">Dynamic Filter Dimensions</div>
+        <div class="ach-desc">Region, Clinic, Visit Type, Date, Nationality, Gender & Age Group — fully interactive cross-filtering.</div>
+      </div>
+      <div class="achievement-card">
+        <span class="ach-num">10+</span>
+        <div class="ach-title">Visualisations in One Report</div>
+        <div class="ach-desc">Flow charts, trend lines, bar charts, donut charts, and KPI cards — all in a single, cohesive page.</div>
+      </div>
+      <div class="achievement-card">
+        <span class="ach-num">Daily</span>
+        <div class="ach-title">Automated Data Refresh</div>
+        <div class="ach-desc">Dashboard auto-refreshes daily, ensuring leadership always has up-to-date operational intelligence.</div>
+      </div>
+      <div class="achievement-card">
+        <span class="ach-num">16.67%</span>
+        <div class="ach-title">Admission Rate Identified</div>
+        <div class="ach-desc">Quantified the hospital's admission conversion rate for the first time — a key operational benchmark.</div>
+      </div>
+      <div class="achievement-card">
+        <span class="ach-num">5</span>
+        <div class="ach-title">Ward Performance Tracked</div>
+        <div class="ach-desc">Ward A, B, C, ICU & CCU admission volumes benchmarked — enabling smarter bed allocation decisions.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- TECH STACK -->
+  <div class="case-section">
+    <div class="section-eyebrow">
+      <div class="eyebrow-num num-gold">05</div>
+      <span class="eyebrow-text-gold">Tech Stack</span>
+    </div>
+    <h2>Tools & Technologies Used</h2>
+    <div class="tech-list">
+      <div class="tech-tag"><span>📊</span> Power BI Desktop</div>
+      <div class="tech-tag"><span>⚡</span> DAX (Data Analysis Expressions)</div>
+      <div class="tech-tag"><span>🔄</span> Power Query (M Language)</div>
+      <div class="tech-tag"><span>🗄️</span> SQL Server / Excel Data Source</div>
+      <div class="tech-tag"><span>☁️</span> Power BI Service (Cloud Publish)</div>
+      <div class="tech-tag"><span>📅</span> Time Intelligence Functions</div>
+      <div class="tech-tag"><span>🎨</span> Custom Visuals & Conditional Formatting</div>
+      <div class="tech-tag"><span>🔐</span> Row-Level Security (RLS)</div>
+    </div>
+  </div>
+
+  <a href="index.html" class="back-btn">← Back to Portfolio</a>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 <span>Sudharshan Raju Solaraju</span> · Power BI Portfolio</p>
+</footer>
+
+</body>
+</html>
