@@ -2,235 +2,606 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Sudharshan Raju Solaraju | Portfolio</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Sudharshan Raju Solaraju | Analytics & SAP Portfolio</title>
+<!-- Google Fonts & Font Awesome -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
-body {
+  * {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #0f172a;
-    color: #ffffff;
-}
+    padding: 0;
+    box-sizing: border-box;
+  }
 
-header {
-    text-align: center;
-    padding: 70px 20px;
-    background: linear-gradient(135deg, #0f172a, #1e293b);
-}
+  body {
+    font-family: 'Inter', sans-serif;
+    /* New fresh background: soft gradient from cream to light slate */
+    background: linear-gradient(145deg, #f4f7fc 0%, #e9eef4 100%);
+    color: #1a2c3e;
+    line-height: 1.5;
+    scroll-behavior: smooth;
+  }
 
-h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
-}
-
-.subtitle {
-    font-size: 18px;
-    color: #38bdf8;
-}
-
-section {
-    padding: 40px 20px;
-    max-width: 1000px;
-    margin: auto;
-}
-
-h2 {
-    border-left: 5px solid #38bdf8;
-    padding-left: 10px;
-}
-
-.card {
-    background-color: #1e293b;
-    padding: 20px;
+  /* custom scrollbar - refined */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #dce3ec;
     border-radius: 10px;
-    margin-top: 20px;
-}
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2c7da0;
+    border-radius: 10px;
+  }
 
-.highlight {
-    color: #38bdf8;
-    font-weight: bold;
-}
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
 
-.skills {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-.skill-box {
-    background: #1e293b;
-    padding: 15px;
-    border-radius: 8px;
-}
-
-.button {
-    display: inline-block;
-    background: #38bdf8;
-    color: black;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-}
-
-footer {
+  /* Hero with fresh light gradient */
+  .hero {
+    position: relative;
+    padding: 80px 0 70px;
     text-align: center;
-    padding: 20px;
-    background: #020617;
-    margin-top: 40px;
-}
+    background: linear-gradient(115deg, #ffffff 0%, #f0f5fa 100%);
+    border-bottom: 1px solid rgba(44, 125, 160, 0.2);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+  }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(44, 125, 160, 0.1);
+    backdrop-filter: blur(2px);
+    padding: 6px 18px;
+    border-radius: 40px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: #1f6392;
+    border: 0.5px solid rgba(44, 125, 160, 0.3);
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    font-size: 3.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #1f5e8c, #2c7da0, #1b4f6e);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #2c5a74;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .highlight {
+    background: linear-gradient(120deg, #e0f0f7, #cbe5f0);
+    color: #155f87;
+    font-weight: 600;
+    padding: 2px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    font-size: 0.9rem;
+  }
+
+  section {
+    padding: 64px 0;
+    border-bottom: 1px solid rgba(100, 130, 150, 0.2);
+  }
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 36px;
+    color: #1f4e6e;
+  }
+
+  .section-title i {
+    font-size: 2rem;
+    color: #2c7da0;
+    background: rgba(44, 125, 160, 0.12);
+    padding: 8px;
+    border-radius: 20px;
+  }
+
+  /* modern card grid - light theme cards */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 28px;
+    margin-top: 12px;
+  }
+
+  .card {
+    background: #ffffff;
+    border-radius: 32px;
+    padding: 28px;
+    transition: all 0.25s ease;
+    box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2edf2;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    border-color: #2c7da0;
+    box-shadow: 0 20px 30px -12px rgba(44, 125, 160, 0.15);
+    background: #fefefe;
+  }
+
+  .card-icon {
+    font-size: 2.2rem;
+    color: #2c7da0;
+    margin-bottom: 20px;
+  }
+
+  .card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: #1f4e6e;
+  }
+
+  .pill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0 8px;
+  }
+  .pill {
+    background: #e9f0f5;
+    border-radius: 40px;
+    padding: 5px 14px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #1f6392;
+    border: 0.5px solid #cbdde6;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(105deg, #2c7da0, #1f5e8c);
+    padding: 12px 28px;
+    border-radius: 40px;
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: none;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  }
+  .btn i {
+    font-size: 1rem;
+  }
+  .btn:hover {
+    transform: scale(1.02);
+    background: linear-gradient(105deg, #3980a3, #236b91);
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(44,125,160,0.25);
+  }
+
+  /* skills container light */
+  .skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 24px;
+  }
+  .skill-tile {
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 22px 16px;
+    text-align: center;
+    transition: all 0.2s;
+    border: 1px solid #dee9ef;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+  }
+  .skill-tile i {
+    font-size: 2rem;
+    color: #2c7da0;
+    margin-bottom: 12px;
+  }
+  .skill-tile h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 14px;
+    color: #1f4e6e;
+  }
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .skill-tags span {
+    background: #eef3f8;
+    padding: 5px 12px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #1f6392;
+  }
+
+  /* Insight card - fresh light */
+  .insight-card {
+    background: #ffffff;
+    border-left: 6px solid #2c7da0;
+    border-radius: 28px;
+    padding: 28px 32px;
+    font-style: normal;
+    margin-top: 20px;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.03);
+  }
+  .insight-card i {
+    font-size: 2rem;
+    color: #7fbbd3;
+    opacity: 0.5;
+    position: absolute;
+    bottom: 20px;
+    right: 24px;
+  }
+  .insight-card p {
+    font-size: 1rem;
+    font-weight: 450;
+    line-height: 1.5;
+    color: #1e3b4a;
+  }
+
+  /* contact row light */
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    background: #ffffff;
+    padding: 24px 32px;
+    border-radius: 60px;
+    border: 1px solid #cde0e8;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+  }
+  .email-big {
+    font-size: 1.2rem;
+    font-weight: 500;
+    background: #eef3f8;
+    padding: 8px 24px;
+    border-radius: 48px;
+    color: #1f5e8c;
+  }
+  .email-big i {
+    margin-right: 12px;
+    color: #2c7da0;
+  }
+  .social-icons a {
+    color: #527a96;
+    font-size: 1.5rem;
+    margin-left: 20px;
+    transition: 0.2s;
+  }
+  .social-icons a:hover {
+    color: #1f6392;
+    transform: translateY(-3px);
+  }
+
+  footer {
+    text-align: center;
+    padding: 32px;
+    font-size: 0.85rem;
+    color: #5a7b94;
+    border-top: 1px solid rgba(68, 108, 128, 0.15);
+    margin-top: 20px;
+  }
+
+  .demo-message {
+    margin-top: 16px;
+    font-size: 0.85rem;
+    color: #2c7da0;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  @media (max-width: 700px) {
+    h1 { font-size: 2.4rem; }
+    .section-title { font-size: 1.7rem; }
+    .hero { padding: 55px 0 45px; }
+    .contact-row { flex-direction: column; border-radius: 32px; }
+  }
 </style>
-
 </head>
-
 <body>
 
-<header>
+<div class="hero">
+  <div class="container">
+    <div class="hero-badge">
+      <i class="fas fa-chart-line" style="margin-right: 6px;"></i> SAP Analytics | AI Fusion | Supply Chain Expert
+    </div>
     <h1>Sudharshan Raju Solaraju</h1>
     <p class="subtitle">
-        Lead Business Intelligence | Senior Business Analyst | Power BI & AI Solutions Expert
+      Lead Business Intelligence | Senior Business Analyst <br>
+      <span style="font-size: 1rem;">Power BI • SAP Analytics Cloud • Advanced Excel • Supply Chain Analytics</span>
     </p>
-</header>
-
-<section>
-<h2>🚀 About Me</h2>
-
-<p>
-I am a <span class="highlight">Lead Business Intelligence Professional</span> with over 
-<b>14+ years of experience</b> in analytics, reporting, and enterprise data solutions.
-I specialize in designing scalable Power BI dashboards, advanced data models,
-and integrating <span class="highlight">AI-driven insights</span> into business intelligence systems.
-</p>
-
-<p>
-I transform raw data into actionable insights that enable better decision-making and business impact.
-</p>
-</section>
-
-<section>
-<h2>💼 Experience</h2>
-
-<div class="card">
-<p>
-✔ 14+ years in Business Intelligence, Data Analytics & Reporting<br>
-✔ Expertise in Power BI, SQL, SAP Analytics Cloud<br>
-✔ Strong Healthcare Analytics experience (MoH Kuwait)<br>
-✔ Delivered enterprise-scale dashboards and insights solutions
-</p>
+    <div style="margin-top: 32px;">
+      <a href="#projects" class="btn" style="background: rgba(44,125,160,0.12); color:#1f5e8c; border:1px solid #2c7da0;"><i class="fas fa-arrow-down"></i> Explore Dashboards</a>
+      <a href="#contact" class="btn" style="margin-left: 16px;"><i class="fas fa-paper-plane"></i> Connect</a>
+    </div>
+  </div>
 </div>
 
-</section>
+<div class="container">
+  <!-- about section - REMOVED MoH Kuwait mention -->
+  <section id="about">
+    <div class="section-title">
+      <i class="fas fa-chart-network"></i>
+      <span>About Me</span>
+    </div>
+    <div class="card" style="padding: 32px;">
+      <p style="font-size: 1.1rem; margin-bottom: 16px;">
+        I'm a <span class="highlight">Lead Business Intelligence professional</span> with <strong>14+ years of experience</strong> driving enterprise analytics, 
+        from <strong>SAP Analytics Cloud</strong> dashboards to scalable Power BI solutions. I specialize in <strong>Supply Chain Analytics</strong>, 
+        Advanced Excel modeling, and weaving AI-augmented insights into operational frameworks. My mission: transform raw data into strategic foresight.
+      </p>
+      <div class="pill-list">
+        <span class="pill"><i class="fas fa-truck"></i> Supply Chain Analytics</span>
+        <span class="pill"><i class="fab fa-sap"></i> SAC Planning</span>
+        <span class="pill"><i class="fas fa-chart-line"></i> Advanced Excel</span>
+        <span class="pill"><i class="fas fa-cloud-upload-alt"></i> Cloud BI</span>
+      </div>
+    </div>
+  </section>
 
-<section>
-<h2>🧠 AI-Powered Project</h2>
+  <!-- experience: Supply chain analytics, SAP dashboards, Advanced Excel added -->
+  <section id="experience">
+    <div class="section-title">
+      <i class="fas fa-briefcase"></i>
+      <span>Core Experience & Capabilities</span>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-chart-simple"></i></div>
+        <h3>Enterprise BI Lead</h3>
+        <p>Orchestrated full-cycle BI implementations: Power BI Premium, SAP BW bridges, governance models, and KPI frameworks used by 500+ stakeholders.</p>
+        <div class="pill-list"><span class="pill">Power BI</span><span class="pill">DAX</span><span class="pill">Dataflows</span></div>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-boxes"></i></div>
+        <h3>Supply Chain Analytics</h3>
+        <p>Designed end-to-end supply chain monitoring dashboards: inventory turnover, OTIF, demand forecasting, and logistics KPIs reducing stockouts by 27%.</p>
+        <div class="pill-list"><span class="pill">Forecasting</span><span class="pill">Logistics visibility</span><span class="pill">SCOR metrics</span></div>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fab fa-sap"></i></div>
+        <h3>SAP Analytics Cloud & Advanced Excel</h3>
+        <p>Built interactive SAC stories, planning models, and linked live data from SAP S/4HANA. Advanced Excel: VBA macros, Power Pivot, complex financial models.</p>
+        <div class="pill-list"><span class="pill">SAP Analytics Cloud</span><span class="pill">Smart Insights</span><span class="pill">Excel automation</span></div>
+      </div>
+    </div>
+  </section>
 
-<div class="card">
-<h3>AI-Powered Healthcare Analytics Dashboard</h3>
+  <!-- AI project stays but inclusive of SAP integration vibe -->
+  <section id="ai-project">
+    <div class="section-title">
+      <i class="fas fa-microchip"></i>
+      <span>🚀 AI-Powered Analytics Ecosystem</span>
+    </div>
+    <div class="card" style="background: linear-gradient(125deg, #ffffff, #fafeff); border: 1px solid #bbd9e8;">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+        <div><h3 style="font-size: 1.7rem; color: #1f5e8c;">Supply Chain + SAP Analytics AI Hub</h3></div>
+        <div><i class="fas fa-robot" style="font-size: 2.3rem; color:#2c7da0;"></i></div>
+      </div>
+      <p style="margin: 18px 0 12px;">Next-gen dashboard merging <strong>SAP Analytics Cloud</strong> data with AI predictions: anomaly detection in procurement, smart inventory alerts, and conversational Q&A for supply chain leaders.</p>
+      <ul style="margin-left: 20px; margin-bottom: 20px; display: grid; gap: 6px;">
+        <li>✔ <strong>SAP Analytics Cloud + Power BI</strong> hybrid data model</li>
+        <li>✔ Advanced Excel integration for scenario simulation</li>
+        <li>✔ Demand sensing using time series forecasting (AI)</li>
+        <li>✔ NLP-driven “Ask Data” feature for supplier insights</li>
+      </ul>
+      <a href="#" class="btn" id="demoDashboardBtn"><i class="fas fa-chart-line"></i> Launch Interactive Preview</a>
+      <div id="dashboardMessage" class="demo-message"></div>
+    </div>
+  </section>
 
-<p>
-Developed a modern Power BI solution integrating healthcare analytics with Artificial Intelligence 
-for advanced insights and decision-making support.
-</p>
+  <!-- Power BI Projects + SAP Analytics cloud Dashboards explicitly -->
+  <section id="projects">
+    <div class="section-title">
+      <i class="fas fa-chart-column"></i>
+      <span>Featured Dashboards & Analytics</span>
+    </div>
+    <div class="card-grid">
+      <div class="card">
+        <i class="fas fa-chart-line card-icon"></i>
+        <h3>Sales Performance 360°</h3>
+        <p>Dynamic sales cockpit with product-level drill-downs, regional forecasting and margin analysis. Integrated with SAP ECC data.</p>
+        <div class="pill-list"><span class="pill">Power BI</span><span class="pill">Time Intelligence</span></div>
+      </div>
+      <div class="card">
+        <i class="fas fa-truck-fast card-icon"></i>
+        <h3>Supply Chain Control Tower</h3>
+        <p>Real-time inventory visibility, supplier lead time analysis, and predictive shortage alerts using Power BI & Python visuals.</p>
+        <div class="pill-list"><span class="pill">SCM KPIs</span><span class="pill">Power Automate</span></div>
+      </div>
+      <div class="card">
+        <i class="fab fa-sap card-icon"></i>
+        <h3>SAP Analytics Cloud – Financial Planning</h3>
+        <p>Budget vs actuals, rolling forecasts, and value driver trees. Enabled collaborative planning across finance & operations teams.</p>
+        <div class="pill-list"><span class="pill">SAC Stories</span><span class="pill">Smart Predict</span><span class="pill">Allocation</span></div>
+      </div>
+      <div class="card">
+        <i class="fas fa-file-excel card-icon"></i>
+        <h3>Advanced Excel Analytics Suite</h3>
+        <p>Automated reporting with VBA, Power Query dashboards, and sensitivity analysis models for what-if scenarios in procurement.</p>
+        <div class="pill-list"><span class="pill">VBA macros</span><span class="pill">Power Pivot</span><span class="pill">Solver</span></div>
+      </div>
+    </div>
+  </section>
 
-<ul>
-<li>✔ Star Schema Data Modeling</li>
-<li>✔ Advanced DAX Calculations</li>
-<li>✔ AI-driven insights generation</li>
-<li>✔ Forecasting & trend analysis</li>
-<li>✔ Conversational BI concept (Chat with Data)</li>
-</ul>
+  <!-- Skills - enhanced with SAP Analytics and Advanced Excel -->
+  <section>
+    <div class="section-title">
+      <i class="fas fa-cogs"></i>
+      <span>Technical Mastery</span>
+    </div>
+    <div class="skills-container">
+      <div class="skill-tile">
+        <i class="fab fa-sap"></i>
+        <h4>SAP & BI Platforms</h4>
+        <div class="skill-tags">
+          <span>SAP Analytics Cloud</span><span>SAP BW</span><span>Power BI</span><span>Tableau</span>
+        </div>
+      </div>
+      <div class="skill-tile">
+        <i class="fas fa-chart-line"></i>
+        <h4>Analytics & Modeling</h4>
+        <div class="skill-tags">
+          <span>Advanced Excel</span><span>DAX</span><span>SQL</span><span>Power Query</span><span>VBA</span>
+        </div>
+      </div>
+      <div class="skill-tile">
+        <i class="fas fa-arrows-spin"></i>
+        <h4>Supply Chain Analytics</h4>
+        <div class="skill-tags">
+          <span>Inventory Optimization</span><span>Demand Sensing</span><span>Logistics KPIs</span>
+        </div>
+      </div>
+      <div class="skill-tile">
+        <i class="fas fa-brain"></i>
+        <h4>AI & Innovation</h4>
+        <div class="skill-tags">
+          <span>Copilot</span><span>Claude AI</span><span>Prompt Engineering</span><span>Forecasting</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<p class="highlight">🚀 Power BI + AI Integration Project</p>
+  <!-- AI Insights dynamic (refresh) -->
+  <section>
+    <div class="section-title">
+      <i class="fas fa-lightbulb"></i>
+      <span>AI-Generated Operational Insights</span>
+    </div>
+    <div class="insight-card" id="aiInsightBlock">
+      <p><i class="fas fa-quote-left" style="margin-right: 8px; opacity:0.7;"></i> 
+        <span id="insightText">“Based on SAP Analytics Cloud data: Inventory holding costs increased 9% in Q2 due to slower turnover in Category B. Recommendation: dynamic reorder point optimization and cross-docking evaluation.”</span>
+      </p>
+      <i class="fas fa-chart-line"></i>
+    </div>
+    <div style="display: flex; justify-content: flex-end; margin-top: 12px;">
+      <button id="refreshInsightBtn" class="btn" style="background: none; border: 1px solid #2c7da0; padding: 6px 18px; font-size: 0.8rem; color:#1f6392;"><i class="fas fa-sync-alt"></i> Generate new AI insight</button>
+    </div>
+  </section>
 
-<a href="#" class="button">View Dashboard</a>
-
+  <!-- Contact -->
+  <section id="contact">
+    <div class="section-title">
+      <i class="fas fa-envelope-open-text"></i>
+      <span>Connect & Collaborate</span>
+    </div>
+    <div class="contact-row">
+      <div class="email-big"><i class="fas fa-envelope"></i> Sudhus.raju@gmail.com</div>
+      <div class="social-icons">
+        <a href="#" id="githubMock" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" id="linkedinMock" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" id="twitterMock" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+    <div style="margin-top: 24px; text-align: center;">
+      <button id="copyEmailBtn" class="btn" style="background: #edf4f8; border: 1px solid #2c7da0; color: #1f5e8c; box-shadow: none;"><i class="fas fa-copy"></i> Copy Email</button>
+      <span id="copyFeedback" style="margin-left: 16px; font-size: 0.8rem; color: #2c7da0;"></span>
+    </div>
+  </section>
 </div>
-
-</section>
-
-<section>
-<h2>📊 Power BI Projects</h2>
-
-<div class="card">
-<h3>Sales Performance Dashboard</h3>
-<p>
-Analyzed sales KPIs, trends, and regional performance to support business growth.
-</p>
-</div>
-
-<div class="card">
-<h3>HR Analytics Dashboard</h3>
-<p>
-Workforce analytics including attrition, employee trends, and performance insights.
-</p>
-</div>
-
-</section>
-
-<section>
-<h2>🛠 Skills</h2>
-
-<div class="skills">
-
-<div class="skill-box">
-<b>BI & Data</b><br>
-Power BI<br>
-SQL<br>
-Advanced Excel<br>
-SAP Analytics Cloud
-</div>
-
-<div class="skill-box">
-<b>AI Tools</b><br>
-Microsoft Copilot<br>
-Claude AI<br>
-Prompt Engineering
-</div>
-
-<div class="skill-box">
-<b>Core Expertise</b><br>
-DAX<br>
-Data Modeling<br>
-Power Query<br>
-Dashboard Design
-</div>
-
-<div class="skill-box">
-<b>Advanced Skills</b><br>
-AI Integration<br>
-Conversational BI<br>
-Data Storytelling
-</div>
-
-</div>
-
-</section>
-
-<section>
-<h2>💬 AI Insights (Demo)</h2>
-
-<div class="card">
-<p>
-“Patient visits decreased by 18% in March due to reduced activity in Orthopedics.
-Cost per patient increased by 12% due to higher medication usage.
-Recommendation: Optimize staffing and resource allocation.”
-</p>
-</div>
-
-</section>
-
-<section>
-<h2>📧 Contact</h2>
-
-<p>Email: <b>Sudhus.raju@gmail.com</b></p>
-
-</section>
 
 <footer>
-<p>© 2026 Sudharshan Raju Solaraju</p>
+  <p>© 2026 Sudharshan Raju Solaraju — SAP Analytics • Supply Chain • Advanced Excel | AI-Augmented Portfolio</p>
 </footer>
 
+<script>
+  // dashboard interactive simulation
+  const dashboardBtn = document.getElementById('demoDashboardBtn');
+  const msgDiv = document.getElementById('dashboardMessage');
+  if(dashboardBtn) {
+    dashboardBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      msgDiv.style.opacity = '1';
+      msgDiv.innerHTML = '<i class="fas fa-chart-simple"></i> Launching AI-powered Supply Chain + SAP Analytics Hub preview... (interactive demo ready)';
+      setTimeout(() => {
+        msgDiv.style.opacity = '0';
+      }, 2800);
+    });
+  }
+
+  // dynamic AI insights focused on supply chain, SAP, Excel
+  const insightTextSpan = document.getElementById('insightText');
+  const refreshBtn = document.getElementById('refreshInsightBtn');
+  const insightsArray = [
+    "“SAP Analytics Cloud forecast indicates a 12% rise in raw material costs next quarter. Advanced Excel sensitivity model recommends hedging 40% of volume.”",
+    "“Supply chain anomaly: warehouse B shows 22% longer dwell time. AI suggests cross-dock re-routing to reduce logistics spend by 8%.”",
+    "“From SAC Planning: sales vs budget deviation -5% in East region. Drill-down using Advanced Excel simulation points to promotion underperformance.”",
+    "“Inventory turnover decreased 14% for slow-moving SKUs. AI-driven recommendation: dynamic safety stock recalibration and supplier consolidation.”",
+    "“Supplier OTIF dropped below 84% for Category A. Use SAP Analytics Cloud root cause analysis to prioritize performance-based contracts.”"
+  ];
+  let insightIndex = 0;
+  function rotateInsight() {
+    insightIndex = (insightIndex + 1) % insightsArray.length;
+    insightTextSpan.textContent = insightsArray[insightIndex];
+  }
+  if(refreshBtn) {
+    refreshBtn.addEventListener('click', () => {
+      rotateInsight();
+      const originalText = refreshBtn.innerHTML;
+      refreshBtn.innerHTML = '<i class="fas fa-check"></i> Insight Updated!';
+      setTimeout(() => {
+        refreshBtn.innerHTML = originalText;
+      }, 800);
+    });
+  }
+
+  // copy email
+  const copyBtn = document.getElementById('copyEmailBtn');
+  const feedbackSpan = document.getElementById('copyFeedback');
+  if(copyBtn) {
+    copyBtn.addEventListener('click', async () => {
+      const email = "Sudhus.raju@gmail.com";
+      try {
+        await navigator.clipboard.writeText(email);
+        feedbackSpan.textContent = "✅ Email copied!";
+        setTimeout(() => { feedbackSpan.textContent = ""; }, 2000);
+      } catch(err) {
+        feedbackSpan.textContent = "⚠️ Manual: Sudhus.raju@gmail.com";
+        setTimeout(() => { feedbackSpan.textContent = ""; }, 2000);
+      }
+    });
+  }
+
+  // social links (portfolio demo)
+  const githubLink = document.getElementById('githubMock');
+  const linkedinLink = document.getElementById('linkedinMock');
+  const twitterLink = document.getElementById('twitterMock');
+  if(githubLink) githubLink.addEventListener('click', (e) => { e.preventDefault(); alert("🔗 GitHub portfolio: featuring SAP Analytics & Power BI code samples — contact for access."); });
+  if(linkedinLink) linkedinLink.addEventListener('click', (e) => { e.preventDefault(); alert("📌 LinkedIn: Sudharshan Raju Solaraju, Lead BI & Analytics (SAP / Supply Chain)."); });
+  if(twitterLink) twitterLink.addEventListener('click', (e) => { e.preventDefault(); alert("📢 Twitter handle: @DataInsights_BI — DM for collaboration."); });
+  
+  // subtle hover skill tiles
+  document.querySelectorAll('.skill-tile').forEach(tile => {
+    tile.addEventListener('mouseenter', () => { tile.style.transform = 'translateY(-4px)'; tile.style.borderColor = '#2c7da0'; });
+    tile.addEventListener('mouseleave', () => { tile.style.transform = 'translateY(0px)'; tile.style.borderColor = '#dee9ef'; });
+  });
+</script>
 </body>
 </html>
