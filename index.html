@@ -2,508 +2,261 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Case Study: Sales Performance 360° | Sudharshan Raju Solaraju</title>
-  <!-- Google Fonts + Font Awesome 6 -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Case Studies | Sudharshan Raju Solaraju</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background: #F9FAFE;
       color: #1E2A3E;
       line-height: 1.5;
     }
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 32px;
-    }
-    /* navbar */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
     .navbar {
+      background: white;
+      border-bottom: 1px solid #E4E9F0;
+      padding: 20px 0;
       position: sticky;
       top: 0;
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid #E4E9F0;
       z-index: 100;
-      padding: 16px 0;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(8px);
     }
-    .nav-flex {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
+    .nav-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+    .logo { font-weight: 800; font-size: 1.5rem; background: linear-gradient(135deg, #1E3A8A, #3B82F6); background-clip: text; -webkit-background-clip: text; color: transparent; text-decoration: none; }
+    .hero { text-align: center; padding: 60px 0 40px; }
+    h1 { font-size: 2.8rem; font-weight: 800; background: linear-gradient(135deg, #0F2B5E, #2563EB); background-clip: text; -webkit-background-clip: text; color: transparent; margin-bottom: 16px; }
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 28px;
+      padding: 40px 0 60px;
     }
-    .logo {
-      font-weight: 800;
-      font-size: 1.5rem;
-      background: linear-gradient(135deg, #1E3A8A, #3B82F6);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      text-decoration: none;
-    }
-    .back-link {
-      color: #3B82F6;
-      text-decoration: none;
-      font-weight: 500;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    /* case study header */
-    .case-header {
-      padding: 48px 0 32px;
-    }
-    .badge {
-      background: #EFF6FF;
-      color: #2563EB;
-      border-radius: 40px;
-      padding: 4px 16px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      display: inline-block;
-      margin-bottom: 20px;
-    }
-    h1 {
-      font-size: 2.8rem;
-      font-weight: 800;
-      background: linear-gradient(135deg, #0F2B5E, #2563EB);
-      background-clip: text;
-      -webkit-background-clip: text;
-      color: transparent;
-      margin-bottom: 16px;
-    }
-    .kpi-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      margin: 32px 0;
+    .case-card {
       background: white;
       border-radius: 28px;
-      padding: 24px;
+      padding: 28px;
       border: 1px solid #E9EEF5;
-    }
-    .kpi-item {
-      flex: 1;
-      min-width: 150px;
-    }
-    .kpi-number {
-      font-size: 2rem;
-      font-weight: 800;
-      color: #1E3A8A;
-    }
-    /* sections */
-    .section-card {
-      background: white;
-      border-radius: 28px;
-      padding: 32px;
-      margin-bottom: 32px;
-      border: 1px solid #E9EEF5;
+      transition: 0.25s ease;
+      text-decoration: none;
+      color: inherit;
+      display: block;
       box-shadow: 0 4px 12px rgba(0,0,0,0.02);
     }
-    .section-title {
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 24px;
+    .case-card:hover { transform: translateY(-6px); border-color: #3B82F6; box-shadow: 0 20px 30px -12px rgba(59,130,246,0.15); }
+    .case-icon { font-size: 2.5rem; margin-bottom: 16px; }
+    .case-card h3 { font-size: 1.4rem; margin-bottom: 12px; color: #1E3A8A; }
+    .case-card p { color: #475569; margin-bottom: 16px; }
+    .badge-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .badge { background: #EFF6FF; color: #2563EB; padding: 4px 12px; border-radius: 30px; font-size: 0.7rem; font-weight: 600; }
+    footer { text-align: center; padding: 40px; color: #5B6E8C; border-top: 1px solid #E9EEF5; margin-top: 20px; }
+    .skills-section {
+      background: white;
+      border-radius: 32px;
+      padding: 40px;
+      margin: 40px 0;
+      border: 1px solid #E9EEF5;
+    }
+    .skills-section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 28px;
       display: flex;
       align-items: center;
       gap: 12px;
-      border-left: 4px solid #3B82F6;
-      padding-left: 18px;
-    }
-    .step-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-top: 20px;
-    }
-    .step-card {
-      background: #F8FAFE;
-      border-radius: 20px;
-      padding: 24px;
-      transition: 0.2s;
-    }
-    .step-icon {
-      font-size: 2rem;
-      color: #3B82F6;
-      margin-bottom: 16px;
-    }
-    .dax-code {
-      background: #1E293B;
-      color: #E2E8F0;
-      padding: 16px;
-      border-radius: 16px;
-      font-family: monospace;
-      font-size: 0.85rem;
-      overflow-x: auto;
-      margin: 16px 0;
-    }
-    .dashboard-preview {
-      background: linear-gradient(145deg, #F1F5F9, #FFFFFF);
-      border-radius: 24px;
-      padding: 24px;
-      text-align: center;
-      border: 1px solid #E2E8F0;
-    }
-    /* Dashboard visual grid styles */
-    .visuals-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin: 24px 0;
-    }
-    .visual-card {
-      background: white;
-      border-radius: 20px;
-      padding: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      border: 1px solid #E9EEF5;
-      transition: 0.2s;
-    }
-    .visual-card:hover {
-      transform: translateY(-4px);
-      border-color: #3B82F6;
-    }
-    .visual-title {
-      font-weight: 700;
-      margin-top: 12px;
-      margin-bottom: 8px;
       color: #1E3A8A;
     }
-    .mock-chart {
-      background: linear-gradient(135deg, #E2E8F0, #F1F5F9);
-      border-radius: 16px;
-      height: 160px;
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .skill-category {
+      background: #F8FAFE;
+      border-radius: 20px;
+      padding: 20px;
+      border: 1px solid #E9EEF5;
+    }
+    .skill-category h3 {
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+      color: #1E3A8A;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      color: #3B82F6;
-      font-size: 2rem;
-      position: relative;
-      overflow: hidden;
-    }
-    .bar-chart-mock {
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      gap: 12px;
-      height: 100%;
-      padding: 16px;
-    }
-    .bar {
-      width: 40px;
-      background: #3B82F6;
-      border-radius: 8px 8px 4px 4px;
-      transition: 0.2s;
-    }
-    .line-mock {
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      gap: 8px;
-      height: 100%;
-      padding: 16px;
-    }
-    .line-dot {
-      width: 8px;
-      height: 8px;
-      background: #3B82F6;
-      border-radius: 50%;
-      position: relative;
-    }
-    .kpi-mock {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
       gap: 8px;
     }
-    .btn {
-      display: inline-block;
-      background: #1E3A8A;
-      color: white;
-      padding: 10px 24px;
-      border-radius: 40px;
-      text-decoration: none;
+    .skill-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .skill-tag {
+      background: white;
+      padding: 6px 14px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: #1E40AF;
+      border: 0.5px solid #CBD5E1;
+    }
+    .skill-tag-ai {
+      background: linear-gradient(135deg, #EFF6FF, #DBEAFE);
+      border-color: #3B82F6;
+      color: #1D4ED8;
       font-weight: 600;
-      margin-top: 16px;
     }
-    footer {
-      text-align: center;
-      padding: 40px;
-      color: #5B6E8C;
-      border-top: 1px solid #E9EEF5;
-      margin-top: 40px;
-    }
-    @media (max-width: 680px) {
-      .container { padding: 0 20px; }
-      h1 { font-size: 1.8rem; }
-    }
+    @media (max-width: 680px) { .container { padding: 0 20px; } h1 { font-size: 2rem; } }
   </style>
 </head>
 <body>
-
 <nav class="navbar">
   <div class="container nav-flex">
-    <a href="#" onclick="history.back(); return false;" class="logo">← Sudharshan<span style="color:#2563EB;">.BI</span></a>
-    <a href="#" onclick="history.back(); return false;" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+    <a href="#" class="logo">Sudharshan BI</a>
+    <a href="#" onclick="history.back(); return false;" style="color:#3B82F6; text-decoration:none;">← Back</a>
   </div>
 </nav>
-
 <div class="container">
-  <div class="case-header">
-    <div class="badge"><i class="fas fa-chart-line"></i> Complete Case Study</div>
-    <h1>📊 Sales Performance 360° Dashboard</h1>
-    <p style="font-size: 1.2rem; color: #2D3A5E; max-width: 800px;">From fragmented Excel files and SQL databases to an executive sales cockpit — a complete walkthrough of the Power BI solution.</p>
+  <div class="hero">
+    <h1>📚 Complete Analytics Case Studies</h1>
+    <p style="color:#475569; max-width: 700px; margin: 0 auto;">Comprehensive end-to-end walkthroughs: Business Problem → Data Cleaning → Data Modeling → DAX → Dashboard → Impact</p>
   </div>
 
-  <!-- Executive Summary KPI -->
-  <div class="kpi-row">
-    <div class="kpi-item"><div class="kpi-number">+23%</div><div>Forecast Accuracy</div><small style="color:#64748B;">Year-over-Year</small></div>
-    <div class="kpi-item"><div class="kpi-number">8+</div><div>Data Sources Unified</div><small style="color:#64748B;">Excel, SQL Server</small></div>
-    <div class="kpi-item"><div class="kpi-number">40%</div><div>Faster Reporting</div><small style="color:#64748B;">Automated Refresh</small></div>
-    <div class="kpi-item"><div class="kpi-number">5M+</div><div>Rows Processed</div><small style="color:#64748B;">Daily Incremental Load</small></div>
-  </div>
-
-  <!-- 1. Business Problem -->
-  <div class="section-card">
-    <div class="section-title"><i class="fas fa-question-circle" style="color:#3B82F6;"></i> 1. The Business Problem</div>
-    <p><strong>Challenge:</strong> The VP of Sales at a mid-sized manufacturing firm faced declining revenue visibility. Regional managers submitted conflicting Excel reports, sales data was scattered across multiple <strong>Excel workbooks</strong> and an on-premise <strong>SQL Server</strong> database. Key questions remained unanswered: <em>Which products are truly profitable? Why did the Western region miss targets for three consecutive months? Are we losing market share to competitors?</em></p>
-    <p style="margin-top: 16px;"><strong>Objective:</strong> Build a single source of truth that provides real-time visibility into sales performance, forecasts trends, and enables drill-down from executive summary to individual transactions using only Excel and SQL data sources.</p>
-  </div>
-
-  <!-- 2. Data Sources & Connectivity (Updated: Excel + SQL only) -->
-  <div class="section-card">
-    <div class="section-title"><i class="fas fa-database"></i> 2. Data Sources & Connectivity</div>
-    <p>Data was extracted and connected using Power BI's native connectors from Excel and SQL Server :</p>
-    <div class="step-grid">
-      <div class="step-card"><i class="fas fa-file-excel step-icon"></i><h3>Excel Files (Legacy & Operational)</h3><p>Sales Targets (Quarterly), Regional Plans, Product Master, Customer Lists<br><small>Format: .xlsx files from SharePoint / shared drives</small></p></div>
-      <div class="step-card"><i class="fas fa-database step-icon"></i><h3>SQL Server Database</h3><p>On-premise SQL Server 2019<br><small>Tables: Orders, OrderDetails, Invoices, Customers, Products, Regions</small></p></div>
-    </div>
-    <div class="dax-code">// Connection details - SQL Server (via Get Data → SQL Server)<br>
-    Server: SQL-SALES-01<br>
-    Database: SalesDataMart<br>
-    Data Connectivity mode: Import (optimized for performance)<br>
-    <br>
-    // Excel connections: Folder connector to auto-load all regional Excel files<br>
-    Source = Folder.Files("\\sharepoint\sales\regional_targets")<br>
-    #"Combined Files" = Table.Combine(List.Transform(Source[Content], Excel.Workbook))
-    </div>
-    <p><i class="fas fa-check-circle" style="color:#22C55E;"></i> <strong>Incremental refresh</strong> configured for SQL fact tables (last 24 months) — reduces load time by 65%. Excel files automatically refreshed from SharePoint folder.</p>
-  </div>
-
-  <!-- 3. Data Cleaning & Transformation (Power Query) -->
-  <div class="section-card">
-    <div class="section-title"><i class="fas fa-broom"></i> 3. Data Cleaning with Power Query</div>
-    <p>Before building the model, raw data from Excel and SQL required extensive cleaning using Power Query Editor :</p>
-    <div class="step-grid">
-      <div class="step-card"><i class="fas fa-tags step-icon"></i><h3>Standardize Region Names</h3><p>"North Region" vs "NORTH" vs "North Region" → unified as "North" using Replace Values and Trim.</p></div>
-      <div class="step-card"><i class="fas fa-calendar-alt step-icon"></i><h3>Fix Data Types</h3><p>OrderDate column converted from Text to Date; SalesAmount cleaned of currency symbols and set to Decimal.</p></div>
-      <div class="step-card"><i class="fas fa-trash-alt step-icon"></i><h3>Remove Duplicates</h3><p>Identified 1,247 duplicate invoice rows using "Remove Duplicates" on InvoiceID + LineItem.</p></div>
-      <div class="step-card"><i class="fas fa-columns step-icon"></i><h3>Drop Unused Columns</h3><p>Removed 20+ irrelevant columns (internal flags, deprecated fields) → model size reduced by 40%.</p></div>
-    </div>
-    <div class="dashboard-preview" style="margin-top: 20px;">
-      <i class="fas fa-chart-line" style="font-size: 2rem; color:#3B82F6;"></i>
-      <p><strong>Power Query M Code Snippet (Data Cleaning):</strong></p>
-      <div class="dax-code" style="text-align: left;">
-// Standardize Region Names from Excel files<br>
-Table.ReplaceValue(#"Previous Step","north","North",Replacer.ReplaceText,{"Region"})<br>
-// Remove duplicates from SQL Orders table<br>
-Table.Distinct(#"SQL_Orders", {"OrderID", "ProductID"})<br>
-// Filter out cancelled orders<br>
-Table.SelectRows(#"Merged Data", each [Status] = "Completed")<br>
-// Trim whitespace in Customer Names<br>
-Table.TransformColumns(#"Previous", {{"CustomerName", Text.Trim, type text}})
-      </div>
-    </div>
-  </div>
-
-  <!-- 4. Data Modeling (Star Schema) -->
-  <div class="section-card">
-    <div class="section-title"><i class="fas fa-cubes"></i> 4. Data Modeling – Star Schema Design</div>
-    <p>Designed a <strong>star schema</strong> to optimize query performance and simplify DAX calculations :</p>
-    <div class="step-grid">
-      <div class="step-card"><i class="fas fa-table step-icon"></i><h3>Fact Table</h3><p><strong>Fact_Sales</strong><br>Columns: OrderID, ProductKey, CustomerKey, DateKey, Quantity, UnitPrice, Discount, SalesAmount (from SQL Server)</p></div>
-      <div class="step-card"><i class="fas fa-tag step-icon"></i><h3>Dimension Tables</h3><p><strong>Dim_Product</strong> (Excel master data)<br><strong>Dim_Customer</strong> (SQL + Excel enrichment)<br><strong>Dim_Date</strong> (Auto-generated in Power Query)<br><strong>Dim_Territory</strong> (Excel region mapping)</p></div>
-    </div>
-    <div class="dashboard-preview">
-      <i class="fas fa-project-diagram" style="font-size: 2rem;"></i>
-      <p><strong>Relationship Diagram:</strong> Fact_Sales joins to Dim_Product (ProductKey), Dim_Customer (CustomerKey), Dim_Date (OrderDateKey), Dim_Territory (TerritoryKey). All relationships are one-to-many with single-direction cross-filtering.</p>
-      <div class="mock-chart" style="height: 120px;"><i class="fas fa-share-alt"></i> 📐 [ Star Schema: Central Fact_Sales table with 4 surrounding Dimension tables ]</div>
-    </div>
-  </div>
-
-  <!-- 5. DAX Measures -->
-  <div class="section-card">
-    <div class="section-title"><i class="fas fa-calculator"></i> 5. Advanced DAX Calculations</div>
-    <p>Key business measures created using DAX (Data Analysis Expressions) :</p>
-    <div class="step-grid">
-      <div class="step-card"><h3>📈 Total Sales</h3><div class="dax-code">Total Sales = SUMX(Fact_Sales, Fact_Sales[Quantity] * Fact_Sales[UnitPrice])</div></div>
-      <div class="step-card"><h3>📊 YoY Growth %</h3><div class="dax-code">YoY Growth = <br>VAR CurrentSales = [Total Sales]<br>VAR PreviousSales = CALCULATE([Total Sales], SAMEPERIODLASTYEAR(Dim_Date[Date]))<br>RETURN DIVIDE(CurrentSales - PreviousSales, PreviousSales)</div></div>
-      <div class="step-card"><h3>🎯 Sales vs Target</h3><div class="dax-code">Sales vs Target = DIVIDE([Total Sales], SUM(Targets[TargetAmount]), 0)</div></div>
-      <div class="step-card"><h3>🏆 Top Product by Revenue</h3><div class="dax-code">Top Product = TOPN(1, VALUES(Product[ProductName]), [Total Sales])</div></div>
-    </div>
-    <p><i class="fas fa-chart-line" style="color:#3B82F6;"></i> Additional measures: <strong>YTD Sales</strong>, <strong>Moving Average (3 months)</strong>, <strong>Profit Margin %</strong>, <strong>Customer Lifetime Value (CLV)</strong>.</p>
-  </div>
-
-  <!-- 6. Dashboard Visuals & Features - Enhanced with multiple visual mockups -->
-  <div class="section-card">
-    <div class="section-title"><i class="fas fa-chalkboard-user"></i> 6. Interactive Dashboard Visuals</div>
-    <p>The final dashboard follows a <strong>visual hierarchy</strong> for executive decision-making with these key visualizations :</p>
-    
-    <!-- Grid of dashboard visual mockups -->
-    <div class="visuals-grid">
-      <div class="visual-card">
-        <div class="mock-chart">
-          <div class="kpi-mock">
-            <i class="fas fa-chart-line" style="font-size: 2rem;"></i>
-            <span style="font-size: 2rem; font-weight: 800;">$12.4M</span>
-            <span>Total Sales</span>
-            <span style="color:#22C55E;">↑ +18% vs PY</span>
-          </div>
+  <!-- SKILLS SECTION -->
+  <div class="skills-section">
+    <h2><i class="fas fa-cogs"></i> Technical Mastery & AI Toolkit</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3><i class="fas fa-chart-line"></i> Power BI & Data Modeling</h3>
+        <div class="skill-items">
+          <span class="skill-tag">Advanced DAX</span>
+          <span class="skill-tag">Star Schema</span>
+          <span class="skill-tag">Power Query M</span>
+          <span class="skill-tag">Row-Level Security</span>
+          <span class="skill-tag">Performance Tuning</span>
+          <span class="skill-tag">Tabular Editor</span>
         </div>
-        <div class="visual-title">📊 Executive KPI Cards</div>
-        <small>Total Sales, Gross Profit, YoY Growth, Target Attainment</small>
       </div>
-
-      <div class="visual-card">
-        <div class="mock-chart">
-          <div class="line-mock" style="display: flex; align-items: flex-end; justify-content: center; gap: 12px; height: 100%;">
-            <div style="width: 35px; background: #3B82F6; height: 80px; border-radius: 6px;"></div>
-            <div style="width: 35px; background: #60A5FA; height: 110px; border-radius: 6px;"></div>
-            <div style="width: 35px; background: #3B82F6; height: 95px; border-radius: 6px;"></div>
-            <div style="width: 35px; background: #60A5FA; height: 125px; border-radius: 6px;"></div>
-            <div style="width: 35px; background: #3B82F6; height: 70px; border-radius: 6px;"></div>
-          </div>
+      <div class="skill-category">
+        <h3><i class="fab fa-sap"></i> SAP Ecosystem</h3>
+        <div class="skill-items">
+          <span class="skill-tag">SAP Analytics Cloud</span>
+          <span class="skill-tag">SAP HANA</span>
+          <span class="skill-tag">SAP BW</span>
+          <span class="skill-tag">S/4HANA</span>
+          <span class="skill-tag">SAC Stories</span>
+          <span class="skill-tag">Smart Predict</span>
         </div>
-        <div class="visual-title">📈 Monthly Sales Trend</div>
-        <small>Bar chart with forecast vs actual, trend line overlay</small>
       </div>
-
-      <div class="visual-card">
-        <div class="mock-chart">
-          <div style="display: flex; justify-content: center; gap: 8px; align-items: flex-end; height: 100%; padding: 16px;">
-            <div style="width: 50px; background: #3B82F6; height: 90px; border-radius: 8px;"></div>
-            <div style="width: 50px; background: #60A5FA; height: 140px; border-radius: 8px;"></div>
-            <div style="width: 50px; background: #3B82F6; height: 75px; border-radius: 8px;"></div>
-            <div style="width: 50px; background: #60A5FA; height: 110px; border-radius: 8px;"></div>
-          </div>
+      <div class="skill-category">
+        <h3><i class="fas fa-robot"></i> AI & Generative AI Tools</h3>
+        <div class="skill-items">
+          <span class="skill-tag skill-tag-ai"><i class="fab fa-microsoft"></i> Microsoft Copilot</span>
+          <span class="skill-tag skill-tag-ai"><i class="fas fa-brain"></i> Claude AI</span>
+          <span class="skill-tag skill-tag-ai">Prompt Engineering</span>
+          <span class="skill-tag skill-tag-ai">Conversational BI</span>
+          <span class="skill-tag skill-tag-ai">AI-Enhanced Dashboards</span>
         </div>
-        <div class="visual-title">🏆 Top 10 Products by Revenue</div>
-        <small>Horizontal bar chart with product category breakdown</small>
       </div>
-
-      <div class="visual-card">
-        <div class="mock-chart">
-          <div style="display: flex; justify-content: center; gap: 16px; align-items: center; height: 100%;">
-            <div><i class="fas fa-chart-pie" style="font-size: 3rem; color:#3B82F6;"></i></div>
-            <div style="text-align: left;">
-              <div>🔵 Electronics 42%</div>
-              <div>🟢 Furniture 28%</div>
-              <div>🟠 Clothing 18%</div>
-              <div>🟣 Others 12%</div>
-            </div>
-          </div>
+      <div class="skill-category">
+        <h3><i class="fas fa-database"></i> Data Engineering</h3>
+        <div class="skill-items">
+          <span class="skill-tag">SQL (Complex Joins, CTEs)</span>
+          <span class="skill-tag">ETL / Dataflows</span>
+          <span class="skill-tag">Data Cleaning</span>
+          <span class="skill-tag">Advanced Excel VBA</span>
+          <span class="skill-tag">Power Pivot</span>
         </div>
-        <div class="visual-title">🥧 Sales by Category</div>
-        <small>Donut chart with interactive category filtering</small>
       </div>
-
-      <div class="visual-card">
-        <div class="mock-chart">
-          <div style="display: flex; justify-content: center; align-items: center; height: 100%; gap: 16px; flex-wrap: wrap;">
-            <div><i class="fas fa-map-marker-alt" style="font-size: 2rem; color:#3B82F6;"></i></div>
-            <div>
-              <div>📍 East: $4.2M</div>
-              <div>📍 West: $3.8M</div>
-              <div>📍 Central: $2.9M</div>
-              <div>📍 South: $1.5M</div>
-            </div>
-          </div>
-        </div>
-        <div class="visual-title">🗺️ Geographic Heatmap</div>
-        <small>Sales distribution by region / territory with drill-through</small>
-      </div>
-
-      <div class="visual-card">
-        <div class="mock-chart">
-          <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
-            <i class="fas fa-chart-line" style="font-size: 2rem;"></i>
-            <div style="width: 100%; height: 4px; background: #22C55E; margin: 8px 0;"></div>
-            <span>Target: $14.5M</span>
-            <span style="font-size: 1.5rem; font-weight: 700;">86%</span>
-            <span>Achieved</span>
-          </div>
-        </div>
-        <div class="visual-title">🎯 Sales vs Target Gauge</div>
-        <small>Performance tracker with variance indicators</small>
-      </div>
-    </div>
-
-    <div class="dashboard-preview" style="margin-top: 24px;">
-      <i class="fas fa-tachometer-alt" style="font-size: 2rem;"></i>
-      <p><strong>📸 Interactive Dashboard Features</strong></p>
-      <p><strong>Filters:</strong> Year (2023-2025) | Region (All/East/West/Central/South) | Product Category | Sales Rep</p>
-      <p><i class="fas fa-sliders-h"></i> Drill-through enabled: Click on any region → navigates to regional detailed report with transactional data.</p>
-      <p><i class="fas fa-chart-line"></i> Tooltips show detailed metrics on hover: YoY%, Contribution %, Rank</p>
     </div>
   </div>
 
-  <!-- 7. Key Insights Discovered -->
-  <div class="section-card">
-    <div class="section-title"><i class="fas fa-lightbulb"></i> 7. Key Insights Discovered</div>
-    <ul style="margin-left: 24px; line-height: 1.8;">
-      <li><strong>📉 Western Region underperformance:</strong> 18% below target due to 2 underperforming sales reps (identified via drill-through). Action: Performance improvement plan implemented → +12% in next quarter.</li>
-      <li><strong>🏆 Product Insight:</strong> "Premium Series X" contributes 34% of total profit despite only 12% of volume. Recommendation: Increase marketing spend by 20%.</li>
-      <li><strong>📅 Seasonal Pattern:</strong> Sales dip every March (inventory transition from Excel tracking). Recommendation: Shift promotions to February → resulted in +8% March sales YoY.</li>
-      <li><strong>👥 Customer Segment:</strong> Enterprise segment has 42% higher CLV than SMB. Recommendation: Dedicated enterprise sales team formed → +15% enterprise acquisition.</li>
-    </ul>
-  </div>
-
-  <!-- 8. Business Impact Summary -->
-  <div class="section-card" style="background: linear-gradient(115deg, #EFF6FF, #FFFFFF);">
-    <div class="section-title"><i class="fas fa-chart-line"></i> 8. Measurable Business Impact</div>
-    <div class="step-grid">
-      <div class="step-card"><i class="fas fa-chart-line"></i><h3>+23%</h3><p>Forecast Accuracy (reduced variance from 15% to 9%)</p></div>
-      <div class="step-card"><i class="fas fa-dollar-sign"></i><h3>$2.8M</h3><p>Additional revenue identified from underperforming regions</p></div>
-      <div class="step-card"><i class="fas fa-clock"></i><h3>15 hours/week</h3><p>Saved by automating manual Excel consolidation</p></div>
-      <div class="step-card"><i class="fas fa-users"></i><h3>95%</h3><p>User adoption rate among sales leadership</p></div>
-    </div>
-    <p style="margin-top: 20px; text-align: center;"><i class="fas fa-quote-left"></i> "This dashboard transformed how we review sales. We went from gut-feel decisions to data-driven strategy across all regions." — VP of Sales</p>
-  </div>
-
-  <!-- 9. Tools & Technologies Summary -->
-  <div class="section-card">
-    <div class="section-title"><i class="fas fa-tools"></i> Tools & Technologies Used</div>
-    <div style="display: flex; flex-wrap: wrap; gap: 12px;">
-      <span class="badge" style="background:#EFF6FF;">Power BI Desktop</span>
-      <span class="badge" style="background:#EFF6FF;">Power Query (M Language)</span>
-      <span class="badge" style="background:#EFF6FF;">DAX</span>
-      <span class="badge" style="background:#EFF6FF;">SQL Server (Import Mode)</span>
-      <span class="badge" style="background:#EFF6FF;">Excel (Folder Connector)</span>
-      <span class="badge" style="background:#EFF6FF;">Power BI Service (Sharing)</span>
-      <span class="badge" style="background:#EFF6FF;">Row-Level Security (RLS)</span>
-      <span class="badge" style="background:#EFF6FF;">SharePoint / OneDrive (Excel refresh)</span>
-    </div>
-  </div>
-
-  <div style="text-align: center; padding: 32px 0;">
-    <a href="#" onclick="history.back(); return false;" class="btn"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+  <div class="case-grid">
+    <a href="#case-sales" class="case-card" onclick="showCase('sales'); return false;">
+      <div class="case-icon">📊</div>
+      <h3>Sales Performance 360°</h3>
+      <p>Executive sales cockpit: forecast accuracy +23%, unified Excel + SQL data, star schema, advanced DAX.</p>
+      <div class="badge-list"><span class="badge">Power BI</span><span class="badge">DAX</span><span class="badge">Star Schema</span></div>
+    </a>
+    <a href="#case-telecom" class="case-card" onclick="showCase('telecom'); return false;">
+      <div class="case-icon">📱</div>
+      <h3>Telecom Customer Churn Analytics</h3>
+      <p>Churn prediction, customer lifetime value, retention strategies — reduced churn by 24%.</p>
+      <div class="badge-list"><span class="badge">Power BI</span><span class="badge">Churn Analytics</span><span class="badge">DAX</span></div>
+    </a>
+    <a href="#case-supplychain" class="case-card" onclick="showCase('supplychain'); return false;">
+      <div class="case-icon">📦</div>
+      <h3>Supply Chain Control Tower</h3>
+      <p>Inventory optimization, OTIF tracking, stockout reduction -27%. SAP HANA + SAP BW powered.</p>
+      <div class="badge-list"><span class="badge">SAP HANA</span><span class="badge">SAP BW</span><span class="badge">Power BI</span></div>
+    </a>
+    <a href="#case-sap" class="case-card" onclick="showCase('sap'); return false;">
+      <div class="case-icon">💰</div>
+      <h3>SAP Analytics Cloud – FP&A</h3>
+      <p>Financial planning & analysis: 35% faster month-end closing, budget vs actuals, rolling forecasts.</p>
+      <div class="badge-list"><span class="badge">SAP SAC</span><span class="badge">Smart Predict</span><span class="badge">Planning</span></div>
+    </a>
+    <a href="#case-healthcare" class="case-card" onclick="showCase('healthcare'); return false;">
+      <div class="case-icon">🏥</div>
+      <h3>Patient Health Outcomes</h3>
+      <p>Readmission risk, population health trends, 12% reduction in readmissions via predictive models.</p>
+      <div class="badge-list"><span class="badge">Power BI</span><span class="badge">Healthcare KPIs</span><span class="badge">DAX</span></div>
+    </a>
+    <a href="#case-retail" class="case-card" onclick="showCase('retail'); return false;">
+      <div class="case-icon">🏪</div>
+      <h3>Retail & Omnichannel Analytics</h3>
+      <p>Market basket analysis, RFM segmentation, 15% uplift in cross-sell with POS + loyalty data.</p>
+      <div class="badge-list"><span class="badge">Power BI</span><span class="badge">Market Basket</span><span class="badge">RFM</span></div>
+    </a>
+    <a href="#case-spend" class="case-card" onclick="showCase('spend'); return false;">
+      <div class="case-icon">💰</div>
+      <h3>Procurement & Spend Analytics</h3>
+      <p>Vendor consolidation, maverick spend detection, $2.4M annual savings identified.</p>
+      <div class="badge-list"><span class="badge">Power BI</span><span class="badge">Advanced Excel</span><span class="badge">SQL</span></div>
+    </a>
+    <a href="#case-operations" class="case-card" onclick="showCase('operations'); return false;">
+      <div class="case-icon">🏥</div>
+      <h3>Healthcare Operations Analytics</h3>
+      <p>OR utilization, bed capacity planning, 22% improved asset utilization, reduced wait times.</p>
+      <div class="badge-list"><span class="badge">Power BI</span><span class="badge">Capacity Planning</span><span class="badge">DAX</span></div>
+    </a>
   </div>
 </div>
-
 <footer>
-  <p>© 2026 Sudharshan Raju Solaraju — Lead Business Intelligence | Complete Case Study: Sales Performance 360° (Excel + SQL Server)</p>
+  <p>© 2026 Sudharshan Raju Solaraju — Lead Business Intelligence | AI-Powered Analytics (Microsoft Copilot + Claude AI) | Complete Case Study Library</p>
 </footer>
 
+<script>
+function showCase(caseId) {
+  let content = '';
+  if(caseId === 'sales') content = getSalesCase();
+  else if(caseId === 'telecom') content = getTelecomCase();
+  else if(caseId === 'supplychain') content = getSupplyChainCase();
+  else if(caseId === 'sap') content = getSAPCase();
+  else if(caseId === 'healthcare') content = getHealthcareCase();
+  else if(caseId === 'retail') content = getRetailCase();
+  else if(caseId === 'spend') content = getSpendCase();
+  else if(caseId === 'operations') content = getOperationsCase();
+  
+  const newWin = window.open();
+  newWin.document.write(content);
+  newWin.document.close();
+}
+
+function getSalesCase() { return `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Sales Performance 360° | Case Study</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><style>*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Inter',sans-serif;background:#F9FAFE;color:#1E2A3E;}.container{max-width:1280px;margin:0 auto;padding:0 32px;}.navbar{background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);border-bottom:1px solid #E4E9F0;padding:16px 0;position:sticky;top:0;}.nav-flex{display:flex;justify-content:space-between;align-items:center;}.logo{font-weight:800;font-size:1.5rem;background:linear-gradient(135deg,#1E3A8A,#3B82F6);background-clip:text;-webkit-background-clip:text;color:transparent;text-decoration:none;}.section-card{background:white;border-radius:28px;padding:32px;margin-bottom:32px;border:1px solid #E9EEF5;}.section-title{font-size:1.6rem;font-weight:700;margin-bottom:24px;border-left:4px solid #3B82F6;padding-left:18px;}.dax-code{background:#1E293B;color:#E2E8F0;padding:16px;border-radius:16px;font-family:monospace;font-size:0.85rem;overflow-x:auto;margin:16px 0;}.badge{background:#EFF6FF;color:#2563EB;border-radius:40px;padding:4px 16px;font-size:0.8rem;display:inline-block;margin-bottom:20px;}.step-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;}.step-card{background:#F8FAFE;border-radius:20px;padding:24px;}.kpi-row{display:flex;flex-wrap:wrap;gap:24px;background:white;border-radius:28px;padding:24px;margin:32px 0;}.kpi-number{font-size:2rem;font-weight:800;color:#1E3A8A;}.btn{display:inline-block;background:#1E3A8A;color:white;padding:10px 24px;border-radius:40px;text-decoration:none;font-weight:600;margin-top:16px;}footer{text-align:center;padding:40px;color:#5B6E8C;border-top:1px solid #E9EEF5;}</style></head><body><nav class="navbar"><div class="container nav-flex"><a href="#" onclick="window.close()" class="logo">Sudharshan BI</a><a href="#" onclick="window.close()" style="color:#3B82F6;">Close</a></div></nav><div class="container"><div class="badge"><i class="fas fa-chart-line"></i> Sales Performance 360°</div><h1>📊 Sales Performance 360° Dashboard</h1><div class="kpi-row"><div><div class="kpi-number">+23%</div><div>Forecast Accuracy</div></div><div><div class="kpi-number">8+</div><div>Data Sources</div></div><div><div class="kpi-number">40%</div><div>Faster Reporting</div></div></div><div class="section-card"><div class="section-title">📌 Business Problem</div><p>Sales data scattered across Excel workbooks + SQL Server. No single source of truth.</p></div><div class="section-card"><div class="section-title">🗄️ Data Sources</div><p><strong>Excel:</strong> Regional targets, Product master<br><strong>SQL Server:</strong> Orders, OrderDetails</p></div><div class="section-card"><div class="section-title">🧮 Key DAX Measures</div><div class="dax-code">Total Sales = SUMX(Fact_Sales, Fact_Sales[Quantity] * Fact_Sales[UnitPrice])</div></div><div class="section-card"><div class="section-title">📈 Business Impact</div><p><strong>+23% forecast accuracy | $2.8M additional revenue</strong></p></div><div style="text-align:center; padding:32px;"><a href="#" onclick="window.close()" class="btn">← Close Case Study</a></div></div><footer>© 2026 Sudharshan Raju Solaraju — Sales Performance 360°</footer></body></html>`; }
+
+function getTelecomCase() { return `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Telecom Customer Churn Analytics | Case Study</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><style>*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Inter',sans-serif;background:#F9FAFE;color:#1E2A3E;}.container{max-width:1280px;margin:0 auto;padding:0 32px;}.navbar{background:rgba(255,255,255,0.96);backdrop-filter:blur(12px);border-bottom:1px solid #E4E9F0;padding:16px 0;position:sticky;top:0;}.nav-flex{display:flex;justify-content:space-between;align-items:center;}.logo{font-weight:800;font-size:1.5rem;background:linear-gradient(135deg,#1E3A8A,#3B82F6);background-clip:text;-webkit-background-clip:text;color:transparent;text-decoration:none;}.section-card{background:white;border-radius:28px;padding:32px;margin-bottom:32px;border:1px solid #E9EEF5;}.section-title{font-size:1.6rem;font-weight:700;margin-bottom:24px;border-left:4px solid #3B82F6;padding-left:18px;}.dax-code{background:#1E293B;color:#E2E8F0;padding:16px;border-radius:16px;font-family:monospace;font-size:0.85rem;overflow-x:auto;margin:16px 0;}.badge{background:#EFF6FF;color:#2563EB;border-radius:40px;padding:4px 16px;font-size:0.8rem;display:inline-block;margin-bottom:20px;}.step-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:20px;}.step-card{background:#F8FAFE;border-radius:20px;padding:24px;transition:0.2s;border:1px solid #E9EEF5;}.step-card:hover{transform:translateY(-2px);border-color:#3B82F6;}.step-icon{font-size:2rem;color:#3B82F6;margin-bottom:16px;}.kpi-row{display:flex;flex-wrap:wrap;gap:24px;background:white;border-radius:28px;padding:24px;margin:32px 0;border:1px solid #E9EEF5;}.kpi-number{font-size:2rem;font-weight:800;color:#1E3A8A;}.visuals-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin:24px 0;}.visual-card{background:#F8FAFE;border-radius:20px;padding:20px;text-align:center;border:1px solid #E9EEF5;}.mock-chart{background:linear-gradient(135deg,#E2E8F0,#F1F5F9);border-radius:16px;height:120px;display:flex;align-items:center;justify-content:center;color:#3B82F6;font-size:2rem;margin-bottom:12px;}.btn{display:inline-block;background:#1E3A8A;color:white;padding:10px 24px;border-radius:40px;text-decoration:none;font-weight:600;margin-top:16px;}footer{text-align:center;padding:40px;color:#5B6E8C;border-top:1px solid #E9EEF5;}</style></head><body><nav class="navbar"><div class="container nav-flex"><a href="#" onclick="window.close()" class="logo">Sudharshan BI</a><a href="#" onclick="window.close()" style="color:#3B82F6;">Close</a></div></nav><div class="container"><div class="badge"><i class="fas fa-chart-line"></i> Telecom Analytics</div><h1>📱 Telecom Customer Churn & Retention Analytics</h1><p style="font-size:1.1rem; color:#2D3A5E; margin-bottom:20px;">Predictive churn modeling, customer segmentation, and proactive retention strategies.</p><div class="kpi-row"><div><div class="kpi-number">-24%</div><div>Churn Reduction</div><small>Year-over-Year</small></div><div><div class="kpi-number">+18%</div><div>Customer Retention</div><small>High-risk segments</small></div><div><div class="kpi-number">$4.2M</div><div>Revenue Saved</div><small>via retention campaigns</small></div><div><div class="kpi-number">85%</div><div>Churn Prediction Accuracy</div><small>3-month lead time</small></div></div><div class="section-card"><div class="section-title"><i class="fas fa-question-circle"></i> 1. Business Problem</div><p><strong>Challenge:</strong> A large telecom provider was experiencing 28% annual customer churn rate. High acquisition costs ($450 per new customer) made retention critical. The marketing team had no data-driven way to identify at-risk customers before they left. Key questions: <em>Which customers are most likely to churn? What are the leading indicators? Which retention offers yield highest ROI?</em></p><p style="margin-top:16px;"><strong>Objective:</strong> Build a predictive churn analytics dashboard that identifies at-risk customers, recommends retention actions, and tracks campaign effectiveness — integrated with CRM and billing systems.</p></div><div class="section-card"><div class="section-title"><i class="fas fa-database"></i> 2. Data Sources</div><div class="step-grid"><div class="step-card"><i class="fas fa-database step-icon"></i><h3>SQL Server</h3><p><strong>Tables:</strong> CustomerMaster, SubscriptionHistory, CallDetailRecords, BillingTransactions, SupportTickets</p></div><div class="step-card"><i class="fas fa-file-excel step-icon"></i><h3>Excel Files</h3><p>Retention campaign results, Customer satisfaction surveys, Competitor pricing data</p></div></div><div class="dax-code">// SQL Connection: Server = TELECOM-SQL-01; Database = TelecomDW</div></div><div class="section-card"><div class="section-title"><i class="fas fa-broom"></i> 3. Data Cleaning (Power Query)</div><div class="step-grid"><div class="step-card"><i class="fas fa-tags step-icon"></i><h3>Standardize Customer IDs</h3><p>Unified 3 different formats across CRM, Billing, and Support systems.</p></div><div class="step-card"><i class="fas fa-calendar-alt step-icon"></i><h3>Handle Missing Values</h3><p>Imputed missing tenure data using subscription start dates.</p></div><div class="step-card"><i class="fas fa-trash-alt step-icon"></i><h3>Remove Inactive Records</h3><p>Filtered out test accounts and duplicate customer records (8,432 rows).</p></div></div></div><div class="section-card"><div class="section-title"><i class="fas fa-cubes"></i> 4. Data Modeling – Churn Star Schema</div><div class="step-grid"><div class="step-card"><i class="fas fa-table step-icon"></i><h3>Fact Tables</h3><p><strong>Fact_Churn</strong> (CustomerKey, ChurnDate, ChurnFlag)<br><strong>Fact_Usage</strong> (CustomerKey, MonthKey, CallMinutes, DataGB)<br><strong>Fact_Tickets</strong> (CustomerKey, TicketDate, ResolutionTime)</p></div><div class="step-card"><i class="fas fa-tag step-icon"></i><h3>Dimension Tables</h3><p><strong>Dim_Customer</strong> (Demographics, PlanType, ContractLength)<br><strong>Dim_Date</strong> (Full date hierarchy)</p></div></div></div><div class="section-card"><div class="section-title"><i class="fas fa-calculator"></i> 5. Key DAX Measures</div><div class="step-grid"><div class="step-card"><h3>📊 Churn Rate %</h3><div class="dax-code">Churn Rate = DIVIDE([Total Churned], [Total Active Customers])</div></div><div class="step-card"><h3>⚠️ Churn Risk Score</h3><div class="dax-code">Risk Score = [Usage Decline]*0.3 + [Support Spike]*0.25 + [Payment Delay]*0.2</div></div><div class="step-card"><h3>💰 CLV</h3><div class="dax-code">CLV = SUM(Fact_Billing[Revenue]) - [Acquisition Cost]</div></div></div></div><div class="section-card"><div class="section-title"><i class="fas fa-chalkboard-user"></i> 6. Dashboard Visuals</div><div class="visuals-grid"><div class="visual-card"><div class="mock-chart"><div><div class="kpi-number" style="font-size:1.8rem;">24.5%</div><div>Current Churn Rate</div></div></div><h3>Churn KPI Gauge</h3></div><div class="visual-card"><div class="mock-chart"><i class="fas fa-chart-line"></i><div>MoM Trend</div></div><h3>Churn Trend</h3></div><div class="visual-card"><div class="mock-chart"><i class="fas fa-chart-pie"></i><div>Price: 34%<br>Service: 28%</div></div><h3>Churn Reasons</h3></div></div></div><div class="section-card"><div class="section-title"><i class="fas fa-lightbulb"></i> 7. Key Insights</div><ul><li>Customers with 2+ price hikes have 3.8x higher churn risk → loyalty discount program.</li><li>40% decrease in call minutes over 3 months predicts churn with 78% accuracy.</li><li>Customers with 3+ unresolved tickets churn at 5x rate → VIP Support fast-track.</li></ul></div><div class="section-card" style="background:linear-gradient(115deg,#EFF6FF,#FFFFFF);"><div class="section-title"><i class="fas fa-chart-line"></i> 8. Business Impact</div><div class="step-grid"><div class="step-card"><h3>-24%</h3><p>Churn Reduction</p></div><div class="step-card"><h3>$4.2M</h3><p>Revenue Saved</p></div><div class="step-card"><h3>85%</h3><p>Prediction Accuracy</p></div></div></div><div style="text-align:center; padding:32px;"><a href="#" onclick="window.close()" class="btn">← Close Case Study</a></div></div><footer>© 2026 Sudharshan Raju Solaraju — Telecom Churn Analytics</footer></body></html>`; }
+
+function getSupplyChainCase() { return `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Supply Chain Control Tower | SAP HANA + BW</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><style>*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Inter',sans-serif;background:#F9FAFE;}.container{max-width:1280px;margin:0 auto;padding:0 32px;}.navbar{background:rgba(255,255,255,0.96);padding:16px 0;border-bottom:1px solid #E4E9F0;}.nav-flex{display:flex;justify-content:space-between;}.logo{font-weight:800;font-size:1.5rem;background:linear-gradient(135deg,#1E3A8A,#3B82F6);background-clip:text;-webkit-background-clip:text;color:transparent;}.section-card{background:white;border-radius:28px;padding:32px;margin-bottom:32px;border:1px solid #E9EEF5;}.section-title{font-size:1.6rem;border-left:4px solid #3B82F6;padding-left:18px;margin-bottom:24px;}.badge{background:#EFF6FF;color:#2563EB;padding:4px 16px;border-radius:40px;display:inline-block;margin-bottom:20px;}.dax-code{background:#1E293B;color:#E2E8F0;padding:16px;border-radius:16px;font-family:monospace;}.kpi-number{font-size:2rem;font-weight:800;color:#1E3A8A;}.btn{background:#1E3A8A;color:white;padding:10px 24px;border-radius:40px;text-decoration:none;}</style></head><body><nav class="navbar"><div class="container nav-flex"><span class="logo">Sudharshan BI</span><a href="#" onclick="window.close()" style="color:#3B82F6;">Close</a></div></nav><div class="container"><div class="badge"><i class="fas fa-truck-fast"></i> SAP-Powered Supply Chain</div><h1>📦 Supply Chain Control Tower</h1><div style="display:flex;gap:24px;background:white;padding:24px;border-radius:28px;margin:32px 0;"><div><div class="kpi-number">-27%</div><div>Stockout Reduction</div></div><div><div class="kpi-number">+18%</div><div>OTIF Improvement</div></div><div><div class="kpi-number">$1.2M</div><div>Inventory Savings</div></div></div><div class="section-card"><div class="section-title">🗄️ Data Sources</div><p><strong>SAP HANA:</strong> MARD, LIKP, EKKO (DirectQuery)<br><strong>SAP BW:</strong> 0IC_C03 Inventory Cube, 0PUR_C01 Purchasing Cube</p><div class="dax-code">Server = hana.company.com:30015<br>Database = S4H_PROD</div></div><div class="section-card"><div class="section-title">🧮 Key DAX Measures</div><div class="dax-code">OTIF % = DIVIDE(COUNTROWS(OnTimeDelivery), COUNTROWS(Orders))</div></div><div class="section-card"><div class="section-title">📈 Business Impact</div><p><strong>27% stockout reduction | $1.2M savings | OTIF +18%</strong></p></div><div style="text-align:center; padding:32px;"><a href="#" onclick="window.close()" class="btn">← Close</a></div></div></body></html>`; }
+
+function getSAPCase() { return `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>SAP Analytics Cloud FP&A</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><style>*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Inter',sans-serif;background:#F9FAFE;}.container{max-width:1280px;margin:0 auto;padding:0 32px;}.navbar{background:rgba(255,255,255,0.96);padding:16px 0;border-bottom:1px solid #E4E9F0;}.nav-flex{display:flex;justify-content:space-between;}.logo{font-weight:800;font-size:1.5rem;background:linear-gradient(135deg,#1E3A8A,#3B82F6);background-clip:text;-webkit-background-clip:text;color:transparent;}.section-card{background:white;border-radius:28px;padding:32px;margin-bottom:32px;border:1px solid #E9EEF5;}.section-title{font-size:1.6rem;border-left:4px solid #3B82F6;padding-left:18px;margin-bottom:24px;}.badge{background:#EFF6FF;color:#2563EB;padding:4px 16px;border-radius:40px;display:inline-block;margin-bottom:20px;}.kpi-number{font-size:2rem;font-weight:800;color:#1E3A8A;}.btn{background:#1E3A8A;color:white;padding:10px 24px;border-radius:40px;text-decoration:none;}</style></head><body><nav class="navbar"><div class="container nav-flex"><span class="logo">Sudharshan BI</span><a href="#" onclick="window.close()" style="color:#3B82F6;">Close</a></div></nav><div class="container"><div class="badge"><i class="fab fa-sap"></i> SAP Analytics Cloud</div><h1>💰 SAP Analytics Cloud – FP&A</h1><div style="display:flex;gap:24px;background:white;padding:24px;border-radius:28px;margin:32px 0;"><div><div class="kpi-number">-35%</div><div>Closing Time</div></div><div><div class="kpi-number">±3%</div><div>Forecast Variance</div></div></div><div class="section-card"><div class="section-title">📌 Business Impact</div><p><strong>Month-end closing: 12 days → 4 days | $500k cost savings</strong></p></div><div style="text-align:center; padding:32px;"><a href="#" onclick="window.close()" class="btn">← Close</a></div></div></body></html>`; }
+
+function getHealthcareCase() { return `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Patient Health Outcomes</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><style>*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Inter',sans-serif;background:#F9FAFE;}.container{max-width:1280px;margin:0 auto;padding:0 32px;}.navbar{background:rgba(255,255,255,0.96);padding:16px 0;border-bottom:1px solid #E4E9F0;}.nav-flex{display:flex;justify-content:space-between;}.logo{font-weight:800;font-size:1.5rem;background:linear-gradient(135deg,#1E3A8A,#3B82F6);background-clip:text;-webkit-background-clip:text;color:transparent;}.section-card{background:white;border-radius:28px;padding:32px;margin-bottom:32px;border:1px solid #E9EEF5;}.badge{background:#EFF6FF;color:#2563EB;padding:4px 16px;border-radius:40px;display:inline-block;margin-bottom:20px;}.kpi-number{font-size:2rem;font-weight:800;color:#1E3A8A;}.btn{background:#1E3A8A;color:white;padding:10px 24px;border-radius:40px;text-decoration:none;}</style></head><body><nav class="navbar"><div class="container nav-flex"><span class="logo">Sudharshan BI</span><a href="#" onclick="window.close()" style="color:#3B82F6;">Close</a></div></nav><div class="container"><div class="badge"><i class="fas fa-heartbeat"></i> Healthcare Analytics</div><h1>🏥 Patient Health Outcomes</h1><div style="display:flex;gap:24px;background:white;padding:24px;border-radius:28px;margin:32px 0;"><div><div class="kpi-number">-12%</div><div>Readmission Reduction</div></div></div><div class="section-card"><div class="section-title">📈 Business Impact</div><p><strong>30-day readmissions: 22% → 10% | $1.8M cost avoidance</strong></p></div><div style="text-align:center; padding:32px;"><a href="#" onclick="window.close()" class="btn">← Close</a></div></div></body></html>`; }
+
+function getRetailCase() { return `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Retail Analytics</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><style>*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Inter',sans-serif;background:#F9FAFE;}.container{max-width:1280px;margin:0 auto;padding:0 32px;}.navbar{background:rgba(255,255,255,0.96);padding:16px 0;border-bottom:1px solid #E4E9F0;}.nav-flex{display:flex;justify-content:space-between;}.logo{font-weight:800;font-size:1.5rem;background:linear-gradient(135deg,#1E3A8A,#3B82F6);background-clip:text;-webkit-background-clip:text;color:transparent;}.badge{background:#EFF6FF;color:#2563EB;padding:4px 16px;border-radius:40px;display:inline-block;margin-bottom:20px;}.kpi-number{font-size:2rem;font-weight:800;color:#1E3A8A;}.btn{background:#1E3A8A;color:white;padding:10px 24px;border-radius:40px;text-decoration:none;}</style></head><body><nav class="navbar"><div class="container nav-flex"><span class="logo">Sudharshan BI</span><a href="#" onclick="window.close()" style="color:#3B82F6;">Close</a></div></nav><div class="container"><div class="badge"><i class="fas fa-store"></i> Retail Analytics</div><h1>🏪 Retail & Omnichannel Analytics</h1><div style="display:flex;gap:24px;background:white;padding:24px;border-radius:28px;margin:32px 0;"><div><div class="kpi-number">+15%</div><div>Cross-Sell Uplift</div></div></div><div class="section-card"><div class="section-title">📈 Business Impact</div><p><strong>Cross-sell rate +15% | $3.1M incremental revenue</strong></p></div><div style="text-align:center; padding:32px;"><a href="#" onclick="window.close()" class="btn">← Close</a></div></div></body></html>`; }
+
+function getSpendCase() { return `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Procurement Analytics</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><style>*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Inter',sans-serif;background:#F9FAFE;}.container{max-width:1280px;margin:0 auto;padding:0 32px;}.navbar{background:rgba(255,255,255,0.96);padding:16px 0;border-bottom:1px solid #E4E9F0;}.nav-flex{display:flex;justify-content:space-between;}.logo{font-weight:800;font-size:1.5rem;background:linear-gradient(135deg,#1E3A8A,#3B82F6);background-clip:text;-webkit-background-clip:text;color:transparent;}.badge{background:#EFF6FF;color:#2563EB;padding:4px 16px;border-radius:40px;display:inline-block;margin-bottom:20px;}.kpi-number{font-size:2rem;font-weight:800;color:#1E3A8A;}.btn{background:#1E3A8A;color:white;padding:10px 24px;border-radius:40px;text-decoration:none;}</style></head><body><nav class="navbar"><div class="container nav-flex"><span class="logo">Sudharshan BI</span><a href="#" onclick="window.close()" style="color:#3B82F6;">Close</a></div></nav><div class="container"><div class="badge"><i class="fas fa-coins"></i> Procurement Analytics</div><h1>💰 Procurement & Spend Analytics</h1><div style="display:flex;gap:24px;background:white;padding:24px;border-radius:28px;margin:32px 0;"><div><div class="kpi-number">$2.4M</div><div>Annual Savings</div></div></div><div class="section-card"><div class="section-title">📈 Business Impact</div><p><strong>$2.4M cost savings | Supplier count reduced 28%</strong></p></div><div style="text-align:center; padding:32px;"><a href="#" onclick="window.close()" class="btn">← Close</a></div></div></body></html>`; }
+
+function getOperationsCase() { return `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Healthcare Operations</title><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><style>*{margin:0;padding:0;box-sizing:border-box;}body{font-family:'Inter',sans-serif;background:#F9FAFE;}.container{max-width:1280px;margin:0 auto;padding:0 32px;}.navbar{background:rgba(255,255,255,0.96);padding:16px 0;border-bottom:1px solid #E4E9F0;}.nav-flex{display:flex;justify-content:space-between;}.logo{font-weight:800;font-size:1.5rem;background:linear-gradient(135deg,#1E3A8A,#3B82F6);background-clip:text;-webkit-background-clip:text;color:transparent;}.badge{background:#EFF6FF;color:#2563EB;padding:4px 16px;border-radius:40px;display:inline-block;margin-bottom:20px;}.kpi-number{font-size:2rem;font-weight:800;color:#1E3A8A;}.btn{background:#1E3A8A;color:white;padding:10px 24px;border-radius:40px;text-decoration:none;}</style></head><body><nav class="navbar"><div class="container nav-flex"><span class="logo">Sudharshan BI</span><a href="#" onclick="window.close()" style="color:#3B82F6;">Close</a></div></nav><div class="container"><div class="badge"><i class="fas fa-microscope"></i> Healthcare Ops</div><h1>🏥 Healthcare Operations Analytics</h1><div style="display:flex;gap:24px;background:white;padding:24px;border-radius:28px;margin:32px 0;"><div><div class="kpi-number">+22%</div><div>OR Utilization</div></div></div><div class="section-card"><div class="section-title">📈 Business Impact</div><p><strong>OR utilization: 58% → 72% | Wait times reduced 32%</strong></p></div><div style="text-align:center; padding:32px;"><a href="#" onclick="window.close()" class="btn">← Close</a></div></div></body></html>`; }
+</script>
 </body>
 </html>
