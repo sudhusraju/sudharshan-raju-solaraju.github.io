@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Sudharshan Raju Solaraju | Senior BI & Analytics Portfolio</title>
+  <title>Case Study: Sales Performance 360° | Sudharshan Raju Solaraju</title>
   <!-- Google Fonts + Font Awesome 6 -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -13,38 +13,22 @@
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: 'Inter', sans-serif;
       background: #F9FAFE;
       color: #1E2A3E;
       line-height: 1.5;
-      scroll-behavior: smooth;
     }
-
-    /* custom scroll */
-    ::-webkit-scrollbar {
-      width: 6px;
-    }
-    ::-webkit-scrollbar-track {
-      background: #E9EEF5;
-    }
-    ::-webkit-scrollbar-thumb {
-      background: #3B82F6;
-      border-radius: 10px;
-    }
-
     .container {
       max-width: 1280px;
       margin: 0 auto;
       padding: 0 32px;
     }
-
-    /* header / nav */
+    /* navbar */
     .navbar {
       position: sticky;
       top: 0;
-      background: rgba(255,255,255,0.94);
+      background: rgba(255,255,255,0.96);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid #E4E9F0;
       z-index: 100;
@@ -64,271 +48,205 @@
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
+      text-decoration: none;
     }
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      align-items: center;
-    }
-    .nav-links a {
+    .back-link {
+      color: #3B82F6;
       text-decoration: none;
       font-weight: 500;
-      color: #2C3E66;
-      transition: 0.2s;
-      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
-    .nav-links a:hover {
-      color: #3B82F6;
+    /* case study header */
+    .case-header {
+      padding: 48px 0 32px;
     }
-    .btn-small {
-      background: #3B82F6;
-      color: white;
-      padding: 8px 20px;
-      border-radius: 40px;
-      font-weight: 600;
-      transition: 0.2s;
-    }
-    .btn-small:hover {
-      background: #2563EB;
-      color: white;
-    }
-
-    /* Hero section */
-    .hero {
-      padding: 80px 0 64px;
-      text-align: center;
-    }
-    .hero-badge {
-      display: inline-block;
+    .badge {
       background: #EFF6FF;
       color: #2563EB;
       border-radius: 40px;
-      padding: 5px 16px;
-      font-size: 0.85rem;
+      padding: 4px 16px;
+      font-size: 0.8rem;
       font-weight: 600;
-      margin-bottom: 24px;
+      display: inline-block;
+      margin-bottom: 20px;
     }
     h1 {
-      font-size: 3.5rem;
+      font-size: 2.8rem;
       font-weight: 800;
       background: linear-gradient(135deg, #0F2B5E, #2563EB);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
-      letter-spacing: -0.02em;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
-    .hero-stats {
+    .kpi-row {
       display: flex;
-      justify-content: center;
-      gap: 32px;
-      margin-top: 32px;
       flex-wrap: wrap;
-    }
-    .stat-item {
+      gap: 24px;
+      margin: 32px 0;
       background: white;
-      padding: 12px 24px;
-      border-radius: 60px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-      border: 1px solid #E4E9F0;
-      font-weight: 600;
+      border-radius: 28px;
+      padding: 24px;
+      border: 1px solid #E9EEF5;
     }
-    .stat-number {
-      font-size: 1.6rem;
+    .kpi-item {
+      flex: 1;
+      min-width: 150px;
+    }
+    .kpi-number {
+      font-size: 2rem;
       font-weight: 800;
       color: #1E3A8A;
-      margin-right: 6px;
     }
-    .btn-group {
-      margin-top: 40px;
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-    }
-    .btn-primary {
-      background: #1E3A8A;
-      color: white;
-      padding: 12px 28px;
-      border-radius: 40px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: 0.2s;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .btn-primary:hover {
-      background: #3B82F6;
-      transform: translateY(-2px);
-    }
-    .btn-outline-custom {
-      border: 1px solid #CBD5E1;
+    /* sections */
+    .section-card {
       background: white;
-      padding: 12px 28px;
-      border-radius: 40px;
-      font-weight: 600;
-      color: #1E293B;
-      text-decoration: none;
-      transition: 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .btn-outline-custom:hover {
-      border-color: #3B82F6;
-      color: #3B82F6;
-    }
-
-    /* section style */
-    section {
-      padding: 72px 0;
-      border-bottom: 1px solid #E9EEF5;
-      scroll-margin-top: 80px;
+      border-radius: 28px;
+      padding: 32px;
+      margin-bottom: 32px;
+      border: 1px solid #E9EEF5;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
     }
     .section-title {
-      font-size: 2rem;
+      font-size: 1.6rem;
       font-weight: 700;
-      margin-bottom: 48px;
-      letter-spacing: -0.3px;
+      margin-bottom: 24px;
       display: flex;
       align-items: center;
       gap: 12px;
+      border-left: 4px solid #3B82F6;
+      padding-left: 18px;
     }
-    .section-title i {
-      background: #EFF6FF;
-      padding: 10px;
-      border-radius: 24px;
-      color: #2563EB;
-    }
-
-    /* case study grid - premium card design */
-    .project-grid {
+    .step-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-      gap: 32px;
-    }
-    .project-card {
-      background: white;
-      border-radius: 28px;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      box-shadow: 0 8px 20px -6px rgba(0, 0, 0, 0.05);
-      border: 1px solid #E9EEF5;
-    }
-    .project-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 24px 36px -12px rgba(0, 0, 0, 0.12);
-      border-color: #CDDFFF;
-    }
-    .card-img {
-      background: #F1F5F9;
-      height: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3.5rem;
-      color: #3B82F6;
-      border-bottom: 1px solid #E9EEF5;
-    }
-    .card-content {
-      padding: 24px;
-    }
-    .card-tools {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 14px 0 12px;
-    }
-    .tool-tag {
-      background: #F1F5F9;
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 0.7rem;
-      font-weight: 600;
-      color: #1E40AF;
-    }
-    .metric-badge {
-      background: #EFF6FF;
-      border-radius: 30px;
-      padding: 6px 14px;
-      font-size: 0.75rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 16px;
-    }
-    .btn-card {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
       margin-top: 20px;
-      display: inline-block;
-      font-weight: 600;
-      color: #3B82F6;
-      text-decoration: none;
-      cursor: pointer;
     }
-
-    /* skills grid modern */
-    .skills-wrapper {
+    .step-card {
+      background: #F8FAFE;
+      border-radius: 20px;
+      padding: 24px;
+      transition: 0.2s;
+    }
+    .step-icon {
+      font-size: 2rem;
+      color: #3B82F6;
+      margin-bottom: 16px;
+    }
+    .dax-code {
+      background: #1E293B;
+      color: #E2E8F0;
+      padding: 16px;
+      border-radius: 16px;
+      font-family: monospace;
+      font-size: 0.85rem;
+      overflow-x: auto;
+      margin: 16px 0;
+    }
+    .dashboard-preview {
+      background: linear-gradient(145deg, #F1F5F9, #FFFFFF);
+      border-radius: 24px;
+      padding: 24px;
+      text-align: center;
+      border: 1px solid #E2E8F0;
+    }
+    /* Dashboard visual grid styles */
+    .visuals-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 24px;
+      gap: 20px;
+      margin: 24px 0;
     }
-    .skill-category {
+    .visual-card {
       background: white;
-      border-radius: 24px;
-      padding: 24px;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       border: 1px solid #E9EEF5;
       transition: 0.2s;
     }
-    .skill-category h3 {
-      margin-bottom: 16px;
+    .visual-card:hover {
+      transform: translateY(-4px);
+      border-color: #3B82F6;
+    }
+    .visual-title {
+      font-weight: 700;
+      margin-top: 12px;
+      margin-bottom: 8px;
+      color: #1E3A8A;
+    }
+    .mock-chart {
+      background: linear-gradient(135deg, #E2E8F0, #F1F5F9);
+      border-radius: 16px;
+      height: 160px;
       display: flex;
+      flex-direction: column;
       align-items: center;
+      justify-content: center;
+      color: #3B82F6;
+      font-size: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .bar-chart-mock {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 12px;
+      height: 100%;
+      padding: 16px;
+    }
+    .bar {
+      width: 40px;
+      background: #3B82F6;
+      border-radius: 8px 8px 4px 4px;
+      transition: 0.2s;
+    }
+    .line-mock {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 8px;
+      height: 100%;
+      padding: 16px;
+    }
+    .line-dot {
+      width: 8px;
+      height: 8px;
+      background: #3B82F6;
+      border-radius: 50%;
+      position: relative;
+    }
+    .kpi-mock {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       gap: 8px;
     }
-    .skill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+    .btn {
+      display: inline-block;
+      background: #1E3A8A;
+      color: white;
+      padding: 10px 24px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 16px;
     }
-    .skill-list span {
-      background: #F8FAFE;
-      padding: 6px 16px;
-      border-radius: 30px;
-      font-size: 0.8rem;
-      border: 0.5px solid #E2E8F0;
-    }
-
-    /* insight card */
-    .insight-premium {
-      background: linear-gradient(115deg, #FFFFFF, #F8FAFE);
-      border-radius: 32px;
-      padding: 32px;
-      border-left: 6px solid #3B82F6;
-      box-shadow: 0 12px 24px -12px rgba(0,0,0,0.08);
-      margin-top: 12px;
-    }
-
-    /* contact */
-    .contact-card {
-      background: white;
-      border-radius: 48px;
-      padding: 40px;
-      text-align: center;
-      border: 1px solid #E9EEF5;
-    }
-
     footer {
       text-align: center;
-      padding: 32px;
+      padding: 40px;
       color: #5B6E8C;
-      font-size: 0.85rem;
+      border-top: 1px solid #E9EEF5;
+      margin-top: 40px;
     }
     @media (max-width: 680px) {
       .container { padding: 0 20px; }
-      h1 { font-size: 2.2rem; }
-      .nav-flex { flex-direction: column; }
-      .project-grid { grid-template-columns: 1fr; }
+      h1 { font-size: 1.8rem; }
     }
   </style>
 </head>
@@ -336,279 +254,256 @@
 
 <nav class="navbar">
   <div class="container nav-flex">
-    <div class="logo">Sudharshan<span style="color:#2563EB;">.BI</span></div>
-    <div class="nav-links">
-      <a href="#projects" class="nav-work">Work</a>
-      <a href="#skills-section" class="nav-skills">Skills</a>
-      <a href="#contact" class="btn-small">Contact</a>
-    </div>
+    <a href="#" onclick="history.back(); return false;" class="logo">← Sudharshan<span style="color:#2563EB;">.BI</span></a>
+    <a href="#" onclick="history.back(); return false;" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
   </div>
 </nav>
 
-<header class="hero">
-  <div class="container">
-    <div class="hero-badge"><i class="fas fa-chart-line"></i> 14+ Years • Lead Business Intelligence</div>
-    <h1>Sudharshan Raju Solaraju</h1>
-    <p style="font-size: 1.25rem; max-width: 700px; margin: 0 auto; color: #2D3A5E;">Senior BI Architect • Power BI • SAP Analytics Cloud • Turning raw data into executive decisions</p>
-    <div class="hero-stats">
-      <div class="stat-item"><span class="stat-number">50+</span> Enterprise dashboards</div>
-      <div class="stat-item"><span class="stat-number">35%</span> Faster planning cycles</div>
-      <div class="stat-item"><span class="stat-number">27%</span> Stockout reduction</div>
+<div class="container">
+  <div class="case-header">
+    <div class="badge"><i class="fas fa-chart-line"></i> Complete Case Study</div>
+    <h1>📊 Sales Performance 360° Dashboard</h1>
+    <p style="font-size: 1.2rem; color: #2D3A5E; max-width: 800px;">From fragmented Excel files and SQL databases to an executive sales cockpit — a complete walkthrough of the Power BI solution.</p>
+  </div>
+
+  <!-- Executive Summary KPI -->
+  <div class="kpi-row">
+    <div class="kpi-item"><div class="kpi-number">+23%</div><div>Forecast Accuracy</div><small style="color:#64748B;">Year-over-Year</small></div>
+    <div class="kpi-item"><div class="kpi-number">8+</div><div>Data Sources Unified</div><small style="color:#64748B;">Excel, SQL Server</small></div>
+    <div class="kpi-item"><div class="kpi-number">40%</div><div>Faster Reporting</div><small style="color:#64748B;">Automated Refresh</small></div>
+    <div class="kpi-item"><div class="kpi-number">5M+</div><div>Rows Processed</div><small style="color:#64748B;">Daily Incremental Load</small></div>
+  </div>
+
+  <!-- 1. Business Problem -->
+  <div class="section-card">
+    <div class="section-title"><i class="fas fa-question-circle" style="color:#3B82F6;"></i> 1. The Business Problem</div>
+    <p><strong>Challenge:</strong> The VP of Sales at a mid-sized manufacturing firm faced declining revenue visibility. Regional managers submitted conflicting Excel reports, sales data was scattered across multiple <strong>Excel workbooks</strong> and an on-premise <strong>SQL Server</strong> database. Key questions remained unanswered: <em>Which products are truly profitable? Why did the Western region miss targets for three consecutive months? Are we losing market share to competitors?</em></p>
+    <p style="margin-top: 16px;"><strong>Objective:</strong> Build a single source of truth that provides real-time visibility into sales performance, forecasts trends, and enables drill-down from executive summary to individual transactions using only Excel and SQL data sources.</p>
+  </div>
+
+  <!-- 2. Data Sources & Connectivity (Updated: Excel + SQL only) -->
+  <div class="section-card">
+    <div class="section-title"><i class="fas fa-database"></i> 2. Data Sources & Connectivity</div>
+    <p>Data was extracted and connected using Power BI's native connectors from Excel and SQL Server :</p>
+    <div class="step-grid">
+      <div class="step-card"><i class="fas fa-file-excel step-icon"></i><h3>Excel Files (Legacy & Operational)</h3><p>Sales Targets (Quarterly), Regional Plans, Product Master, Customer Lists<br><small>Format: .xlsx files from SharePoint / shared drives</small></p></div>
+      <div class="step-card"><i class="fas fa-database step-icon"></i><h3>SQL Server Database</h3><p>On-premise SQL Server 2019<br><small>Tables: Orders, OrderDetails, Invoices, Customers, Products, Regions</small></p></div>
     </div>
-    <div class="btn-group">
-      <a href="#projects" class="btn-primary"><i class="fas fa-chart-simple"></i> Explore case studies</a>
-      <a href="#contact" class="btn-outline-custom"><i class="fas fa-paper-plane"></i> Get in touch</a>
+    <div class="dax-code">// Connection details - SQL Server (via Get Data → SQL Server)<br>
+    Server: SQL-SALES-01<br>
+    Database: SalesDataMart<br>
+    Data Connectivity mode: Import (optimized for performance)<br>
+    <br>
+    // Excel connections: Folder connector to auto-load all regional Excel files<br>
+    Source = Folder.Files("\\sharepoint\sales\regional_targets")<br>
+    #"Combined Files" = Table.Combine(List.Transform(Source[Content], Excel.Workbook))
+    </div>
+    <p><i class="fas fa-check-circle" style="color:#22C55E;"></i> <strong>Incremental refresh</strong> configured for SQL fact tables (last 24 months) — reduces load time by 65%. Excel files automatically refreshed from SharePoint folder.</p>
+  </div>
+
+  <!-- 3. Data Cleaning & Transformation (Power Query) -->
+  <div class="section-card">
+    <div class="section-title"><i class="fas fa-broom"></i> 3. Data Cleaning with Power Query</div>
+    <p>Before building the model, raw data from Excel and SQL required extensive cleaning using Power Query Editor :</p>
+    <div class="step-grid">
+      <div class="step-card"><i class="fas fa-tags step-icon"></i><h3>Standardize Region Names</h3><p>"North Region" vs "NORTH" vs "North Region" → unified as "North" using Replace Values and Trim.</p></div>
+      <div class="step-card"><i class="fas fa-calendar-alt step-icon"></i><h3>Fix Data Types</h3><p>OrderDate column converted from Text to Date; SalesAmount cleaned of currency symbols and set to Decimal.</p></div>
+      <div class="step-card"><i class="fas fa-trash-alt step-icon"></i><h3>Remove Duplicates</h3><p>Identified 1,247 duplicate invoice rows using "Remove Duplicates" on InvoiceID + LineItem.</p></div>
+      <div class="step-card"><i class="fas fa-columns step-icon"></i><h3>Drop Unused Columns</h3><p>Removed 20+ irrelevant columns (internal flags, deprecated fields) → model size reduced by 40%.</p></div>
+    </div>
+    <div class="dashboard-preview" style="margin-top: 20px;">
+      <i class="fas fa-chart-line" style="font-size: 2rem; color:#3B82F6;"></i>
+      <p><strong>Power Query M Code Snippet (Data Cleaning):</strong></p>
+      <div class="dax-code" style="text-align: left;">
+// Standardize Region Names from Excel files<br>
+Table.ReplaceValue(#"Previous Step","north","North",Replacer.ReplaceText,{"Region"})<br>
+// Remove duplicates from SQL Orders table<br>
+Table.Distinct(#"SQL_Orders", {"OrderID", "ProductID"})<br>
+// Filter out cancelled orders<br>
+Table.SelectRows(#"Merged Data", each [Status] = "Completed")<br>
+// Trim whitespace in Customer Names<br>
+Table.TransformColumns(#"Previous", {{"CustomerName", Text.Trim, type text}})
+      </div>
     </div>
   </div>
-</header>
 
-<div class="container">
-  <!-- About + core competencies -->
-  <section id="about">
-    <div class="section-title">
-      <i class="fas fa-user-astronaut"></i>
-      <span>About Me</span>
+  <!-- 4. Data Modeling (Star Schema) -->
+  <div class="section-card">
+    <div class="section-title"><i class="fas fa-cubes"></i> 4. Data Modeling – Star Schema Design</div>
+    <p>Designed a <strong>star schema</strong> to optimize query performance and simplify DAX calculations :</p>
+    <div class="step-grid">
+      <div class="step-card"><i class="fas fa-table step-icon"></i><h3>Fact Table</h3><p><strong>Fact_Sales</strong><br>Columns: OrderID, ProductKey, CustomerKey, DateKey, Quantity, UnitPrice, Discount, SalesAmount (from SQL Server)</p></div>
+      <div class="step-card"><i class="fas fa-tag step-icon"></i><h3>Dimension Tables</h3><p><strong>Dim_Product</strong> (Excel master data)<br><strong>Dim_Customer</strong> (SQL + Excel enrichment)<br><strong>Dim_Date</strong> (Auto-generated in Power Query)<br><strong>Dim_Territory</strong> (Excel region mapping)</p></div>
     </div>
-    <div style="background: white; border-radius: 32px; padding: 36px; border:1px solid #E9EEF5;">
-      <p style="font-size: 1.1rem; margin-bottom: 20px;">I'm a <strong>Lead Business Intelligence professional</strong> with 14+ years of experience converting raw, fragmented data into <strong>meaningful insights and high-impact visual stories</strong>. I lead the full analytics cycle: data cleaning, star schema modeling, complex DAX, and executive storytelling.</p>
-      <p>I design scalable <strong>Power BI semantic layers</strong>, craft <strong>SAP Analytics Cloud stories</strong>, and optimize supply chain / healthcare analytics. My approach bridges technical depth with business strategy — delivering dashboards that drive real ROI.</p>
-      <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px;">
-        <span class="tool-tag"><i class="fas fa-database"></i> Data Cleaning</span>
-        <span class="tool-tag"><i class="fas fa-cubes"></i> Star Schema</span>
-        <span class="tool-tag"><i class="fas fa-calculator"></i> Advanced DAX</span>
-        <span class="tool-tag"><i class="fab fa-sap"></i> SAP Analytics Stories</span>
-        <span class="tool-tag"><i class="fas fa-chart-line"></i> Executive Dashboards</span>
-      </div>
+    <div class="dashboard-preview">
+      <i class="fas fa-project-diagram" style="font-size: 2rem;"></i>
+      <p><strong>Relationship Diagram:</strong> Fact_Sales joins to Dim_Product (ProductKey), Dim_Customer (CustomerKey), Dim_Date (OrderDateKey), Dim_Territory (TerritoryKey). All relationships are one-to-many with single-direction cross-filtering.</p>
+      <div class="mock-chart" style="height: 120px;"><i class="fas fa-share-alt"></i> 📐 [ Star Schema: Central Fact_Sales table with 4 surrounding Dimension tables ]</div>
     </div>
-  </section>
+  </div>
 
-  <!-- PROJECTS PORTFOLIO: best design with case study cards -->
-  <section id="projects">
-    <div class="section-title">
-      <i class="fas fa-chart-column"></i>
-      <span>Analytics Case Studies</span>
+  <!-- 5. DAX Measures -->
+  <div class="section-card">
+    <div class="section-title"><i class="fas fa-calculator"></i> 5. Advanced DAX Calculations</div>
+    <p>Key business measures created using DAX (Data Analysis Expressions) :</p>
+    <div class="step-grid">
+      <div class="step-card"><h3>📈 Total Sales</h3><div class="dax-code">Total Sales = SUMX(Fact_Sales, Fact_Sales[Quantity] * Fact_Sales[UnitPrice])</div></div>
+      <div class="step-card"><h3>📊 YoY Growth %</h3><div class="dax-code">YoY Growth = <br>VAR CurrentSales = [Total Sales]<br>VAR PreviousSales = CALCULATE([Total Sales], SAMEPERIODLASTYEAR(Dim_Date[Date]))<br>RETURN DIVIDE(CurrentSales - PreviousSales, PreviousSales)</div></div>
+      <div class="step-card"><h3>🎯 Sales vs Target</h3><div class="dax-code">Sales vs Target = DIVIDE([Total Sales], SUM(Targets[TargetAmount]), 0)</div></div>
+      <div class="step-card"><h3>🏆 Top Product by Revenue</h3><div class="dax-code">Top Product = TOPN(1, VALUES(Product[ProductName]), [Total Sales])</div></div>
     </div>
-    <div class="project-grid">
-      
-      <!-- Card 1: Sales -->
-      <div class="project-card">
-        <div class="card-img"><i class="fas fa-chart-line"></i></div>
-        <div class="card-content">
-          <h3>📊 Sales Performance 360°</h3>
-          <p>Dynamic sales cockpit with territory heatmaps, pipeline tracking, quota attainment & YoY growth. Integrated with CRM + SAP data.</p>
-          <div class="card-tools"><span class="tool-tag">Power BI</span><span class="tool-tag">DAX</span><span class="tool-tag">RLS</span></div>
-          <div class="metric-badge"><i class="fas fa-chart-line"></i> 23% forecast accuracy improvement</div>
-          <a href="#" class="btn-card demo-case">View case study →</a>
-        </div>
-      </div>
-      
-      <!-- Card 2: Supply chain -->
-      <div class="project-card">
-        <div class="card-img"><i class="fas fa-truck-fast"></i></div>
-        <div class="card-content">
-          <h3>📦 Supply Chain Control Tower</h3>
-          <p>Inventory turnover optimization, OTIF tracking, and predictive shortage alerts. Reduced stockouts using AI-driven forecasting.</p>
-          <div class="card-tools"><span class="tool-tag">Power BI</span><span class="tool-tag">Python</span><span class="tool-tag">Forecasting</span></div>
-          <div class="metric-badge"><i class="fas fa-chart-line"></i> 27% stockout reduction</div>
-          <a href="#" class="btn-card demo-case">View case study →</a>
-        </div>
-      </div>
-      
-      <!-- Card 3: SAP Analytics Cloud -->
-      <div class="project-card">
-        <div class="card-img"><i class="fab fa-sap"></i></div>
-        <div class="card-content">
-          <h3>💰 SAP Analytics Cloud – FP&A</h3>
-          <p>Collaborative planning, budget vs actuals, rolling forecasts. Integrated with SAP S/4HANA for real-time financial alignment.</p>
-          <div class="card-tools"><span class="tool-tag">SAC Stories</span><span class="tool-tag">Smart Predict</span><span class="tool-tag">Data Actions</span></div>
-          <div class="metric-badge"><i class="fas fa-chart-line"></i> 35% faster month-end closing</div>
-          <a href="#" class="btn-card demo-case">View case study →</a>
-        </div>
-      </div>
-      
-      <!-- Card 4: Healthcare analytics -->
-      <div class="project-card">
-        <div class="card-img"><i class="fas fa-hospital-user"></i></div>
-        <div class="card-content">
-          <h3>🏥 Patient Health Outcomes</h3>
-          <p>Readmission risk, chronic disease management, population health trends. Predictive models for early intervention.</p>
-          <div class="card-tools"><span class="tool-tag">Power BI</span><span class="tool-tag">Healthcare KPIs</span><span class="tool-tag">DAX</span></div>
-          <div class="metric-badge"><i class="fas fa-chart-line"></i> 12% reduction in readmissions</div>
-          <a href="#" class="btn-card demo-case">View case study →</a>
-        </div>
-      </div>
-      
-      <!-- Card 5: Spend / Procurement -->
-      <div class="project-card">
-        <div class="card-img"><i class="fas fa-coins"></i></div>
-        <div class="card-content">
-          <h3>💰 Procurement & Spend Analytics</h3>
-          <p>Vendor consolidation, maverick spend detection, contract compliance dashboards. Identified 18% cost savings opportunities.</p>
-          <div class="card-tools"><span class="tool-tag">Power BI</span><span class="tool-tag">Advanced Excel</span></div>
-          <div class="metric-badge"><i class="fas fa-chart-line"></i> $2.4M annual savings identified</div>
-          <a href="#" class="btn-card demo-case">View case study →</a>
-        </div>
-      </div>
-      
-      <!-- Card 6: Retail analytics -->
-      <div class="project-card">
-        <div class="card-img"><i class="fas fa-store"></i></div>
-        <div class="card-content">
-          <h3>🏪 Omnichannel Retail Analytics</h3>
-          <p>Basket analysis, customer segmentation, promotional lift. Integrated POS + loyalty data to boost cross-sell by 15%.</p>
-          <div class="card-tools"><span class="tool-tag">Power BI</span><span class="tool-tag">Market Basket</span><span class="tool-tag">RFM</span></div>
-          <div class="metric-badge"><i class="fas fa-chart-line"></i> 15% uplift in cross-sell</div>
-          <a href="#" class="btn-card demo-case">View case study →</a>
-        </div>
-      </div>
-    </div>
-  </section>
+    <p><i class="fas fa-chart-line" style="color:#3B82F6;"></i> Additional measures: <strong>YTD Sales</strong>, <strong>Moving Average (3 months)</strong>, <strong>Profit Margin %</strong>, <strong>Customer Lifetime Value (CLV)</strong>.</p>
+  </div>
 
-  <!-- Core Experience Capabilities (skills section with ID for navigation) -->
-  <section id="skills-section">
-    <div class="section-title">
-      <i class="fas fa-crown"></i>
-      <span>Core competencies</span>
-    </div>
-    <div class="skills-wrapper">
-      <div class="skill-category"><h3><i class="fas fa-chart-simple"></i> Power BI & Data Modeling</h3><div class="skill-list"><span>Advanced DAX</span><span>Star Schema</span><span>Power Query</span><span>RLS</span><span>Performance Tuning</span></div></div>
-      <div class="skill-category"><h3><i class="fab fa-sap"></i> SAP Analytics Cloud</h3><div class="skill-list"><span>SAC Stories</span><span>Smart Predict</span><span>Planning Models</span><span>Digital Boardroom</span><span>Value Driver Trees</span></div></div>
-      <div class="skill-category"><h3><i class="fas fa-database"></i> Data Engineering & Cleaning</h3><div class="skill-list"><span>SQL (CTEs, Window)</span><span>Python (pandas)</span><span>ETL / Dataflows</span><span>Data Quality</span></div></div>
-      <div class="skill-category"><h3><i class="fas fa-chart-line"></i> Advanced Analytics</h3><div class="skill-list"><span>Forecasting</span><span>Cohort Analysis</span><span>What-If</span><span>VBA Macros</span><span>Power Pivot</span></div></div>
-    </div>
-  </section>
+  <!-- 6. Dashboard Visuals & Features - Enhanced with multiple visual mockups -->
+  <div class="section-card">
+    <div class="section-title"><i class="fas fa-chalkboard-user"></i> 6. Interactive Dashboard Visuals</div>
+    <p>The final dashboard follows a <strong>visual hierarchy</strong> for executive decision-making with these key visualizations :</p>
+    
+    <!-- Grid of dashboard visual mockups -->
+    <div class="visuals-grid">
+      <div class="visual-card">
+        <div class="mock-chart">
+          <div class="kpi-mock">
+            <i class="fas fa-chart-line" style="font-size: 2rem;"></i>
+            <span style="font-size: 2rem; font-weight: 800;">$12.4M</span>
+            <span>Total Sales</span>
+            <span style="color:#22C55E;">↑ +18% vs PY</span>
+          </div>
+        </div>
+        <div class="visual-title">📊 Executive KPI Cards</div>
+        <small>Total Sales, Gross Profit, YoY Growth, Target Attainment</small>
+      </div>
 
-  <!-- AI insight demo (premium) -->
-  <section>
-    <div class="section-title">
-      <i class="fas fa-microchip"></i>
-      <span>AI‑Augmented Insights</span>
-    </div>
-    <div class="insight-premium" id="aiBlock">
-      <p><i class="fas fa-quote-left" style="color:#3B82F6; margin-right: 12px;"></i> 
-        <span id="dynamicInsight">“Supply chain anomaly: warehouse B shows 22% longer dwell time. AI recommends cross-dock re-routing to reduce logistics spend by 8%.”</span>
-      </p>
-      <div style="margin-top: 20px; text-align: right;">
-        <button id="newInsightBtn" style="background: none; border: 1px solid #CBD5E1; border-radius: 40px; padding: 6px 18px; font-weight: 500; cursor: pointer;"><i class="fas fa-sync-alt"></i> Generate new insight</button>
+      <div class="visual-card">
+        <div class="mock-chart">
+          <div class="line-mock" style="display: flex; align-items: flex-end; justify-content: center; gap: 12px; height: 100%;">
+            <div style="width: 35px; background: #3B82F6; height: 80px; border-radius: 6px;"></div>
+            <div style="width: 35px; background: #60A5FA; height: 110px; border-radius: 6px;"></div>
+            <div style="width: 35px; background: #3B82F6; height: 95px; border-radius: 6px;"></div>
+            <div style="width: 35px; background: #60A5FA; height: 125px; border-radius: 6px;"></div>
+            <div style="width: 35px; background: #3B82F6; height: 70px; border-radius: 6px;"></div>
+          </div>
+        </div>
+        <div class="visual-title">📈 Monthly Sales Trend</div>
+        <small>Bar chart with forecast vs actual, trend line overlay</small>
+      </div>
+
+      <div class="visual-card">
+        <div class="mock-chart">
+          <div style="display: flex; justify-content: center; gap: 8px; align-items: flex-end; height: 100%; padding: 16px;">
+            <div style="width: 50px; background: #3B82F6; height: 90px; border-radius: 8px;"></div>
+            <div style="width: 50px; background: #60A5FA; height: 140px; border-radius: 8px;"></div>
+            <div style="width: 50px; background: #3B82F6; height: 75px; border-radius: 8px;"></div>
+            <div style="width: 50px; background: #60A5FA; height: 110px; border-radius: 8px;"></div>
+          </div>
+        </div>
+        <div class="visual-title">🏆 Top 10 Products by Revenue</div>
+        <small>Horizontal bar chart with product category breakdown</small>
+      </div>
+
+      <div class="visual-card">
+        <div class="mock-chart">
+          <div style="display: flex; justify-content: center; gap: 16px; align-items: center; height: 100%;">
+            <div><i class="fas fa-chart-pie" style="font-size: 3rem; color:#3B82F6;"></i></div>
+            <div style="text-align: left;">
+              <div>🔵 Electronics 42%</div>
+              <div>🟢 Furniture 28%</div>
+              <div>🟠 Clothing 18%</div>
+              <div>🟣 Others 12%</div>
+            </div>
+          </div>
+        </div>
+        <div class="visual-title">🥧 Sales by Category</div>
+        <small>Donut chart with interactive category filtering</small>
+      </div>
+
+      <div class="visual-card">
+        <div class="mock-chart">
+          <div style="display: flex; justify-content: center; align-items: center; height: 100%; gap: 16px; flex-wrap: wrap;">
+            <div><i class="fas fa-map-marker-alt" style="font-size: 2rem; color:#3B82F6;"></i></div>
+            <div>
+              <div>📍 East: $4.2M</div>
+              <div>📍 West: $3.8M</div>
+              <div>📍 Central: $2.9M</div>
+              <div>📍 South: $1.5M</div>
+            </div>
+          </div>
+        </div>
+        <div class="visual-title">🗺️ Geographic Heatmap</div>
+        <small>Sales distribution by region / territory with drill-through</small>
+      </div>
+
+      <div class="visual-card">
+        <div class="mock-chart">
+          <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+            <i class="fas fa-chart-line" style="font-size: 2rem;"></i>
+            <div style="width: 100%; height: 4px; background: #22C55E; margin: 8px 0;"></div>
+            <span>Target: $14.5M</span>
+            <span style="font-size: 1.5rem; font-weight: 700;">86%</span>
+            <span>Achieved</span>
+          </div>
+        </div>
+        <div class="visual-title">🎯 Sales vs Target Gauge</div>
+        <small>Performance tracker with variance indicators</small>
       </div>
     </div>
-  </section>
 
-  <!-- Contact section modern -->
-  <section id="contact">
-    <div class="contact-card">
-      <i class="fas fa-envelope" style="font-size: 2.2rem; color:#2563EB; margin-bottom: 16px; display: inline-block;"></i>
-      <h3>Let’s collaborate on your next analytics transformation</h3>
-      <p style="margin: 12px 0 24px;">Sudhus.raju@gmail.com</p>
-      <div style="display: flex; gap: 20px; justify-content: center; margin-bottom: 20px; flex-wrap: wrap;">
-        <a href="#" id="copyEmailBtn" style="background:#EFF6FF; padding: 10px 24px; border-radius: 40px; text-decoration: none; font-weight: 500; color:#1E3A8A;"><i class="fas fa-copy"></i> Copy email</a>
-        <a href="#" id="linkedInMock" style="background:#EFF6FF; padding: 10px 24px; border-radius: 40px; text-decoration: none; font-weight: 500; color:#1E3A8A;"><i class="fab fa-linkedin"></i> LinkedIn</a>
-      </div>
-      <span id="copyMessage" style="font-size: 0.8rem;"></span>
+    <div class="dashboard-preview" style="margin-top: 24px;">
+      <i class="fas fa-tachometer-alt" style="font-size: 2rem;"></i>
+      <p><strong>📸 Interactive Dashboard Features</strong></p>
+      <p><strong>Filters:</strong> Year (2023-2025) | Region (All/East/West/Central/South) | Product Category | Sales Rep</p>
+      <p><i class="fas fa-sliders-h"></i> Drill-through enabled: Click on any region → navigates to regional detailed report with transactional data.</p>
+      <p><i class="fas fa-chart-line"></i> Tooltips show detailed metrics on hover: YoY%, Contribution %, Rank</p>
     </div>
-  </section>
+  </div>
+
+  <!-- 7. Key Insights Discovered -->
+  <div class="section-card">
+    <div class="section-title"><i class="fas fa-lightbulb"></i> 7. Key Insights Discovered</div>
+    <ul style="margin-left: 24px; line-height: 1.8;">
+      <li><strong>📉 Western Region underperformance:</strong> 18% below target due to 2 underperforming sales reps (identified via drill-through). Action: Performance improvement plan implemented → +12% in next quarter.</li>
+      <li><strong>🏆 Product Insight:</strong> "Premium Series X" contributes 34% of total profit despite only 12% of volume. Recommendation: Increase marketing spend by 20%.</li>
+      <li><strong>📅 Seasonal Pattern:</strong> Sales dip every March (inventory transition from Excel tracking). Recommendation: Shift promotions to February → resulted in +8% March sales YoY.</li>
+      <li><strong>👥 Customer Segment:</strong> Enterprise segment has 42% higher CLV than SMB. Recommendation: Dedicated enterprise sales team formed → +15% enterprise acquisition.</li>
+    </ul>
+  </div>
+
+  <!-- 8. Business Impact Summary -->
+  <div class="section-card" style="background: linear-gradient(115deg, #EFF6FF, #FFFFFF);">
+    <div class="section-title"><i class="fas fa-chart-line"></i> 8. Measurable Business Impact</div>
+    <div class="step-grid">
+      <div class="step-card"><i class="fas fa-chart-line"></i><h3>+23%</h3><p>Forecast Accuracy (reduced variance from 15% to 9%)</p></div>
+      <div class="step-card"><i class="fas fa-dollar-sign"></i><h3>$2.8M</h3><p>Additional revenue identified from underperforming regions</p></div>
+      <div class="step-card"><i class="fas fa-clock"></i><h3>15 hours/week</h3><p>Saved by automating manual Excel consolidation</p></div>
+      <div class="step-card"><i class="fas fa-users"></i><h3>95%</h3><p>User adoption rate among sales leadership</p></div>
+    </div>
+    <p style="margin-top: 20px; text-align: center;"><i class="fas fa-quote-left"></i> "This dashboard transformed how we review sales. We went from gut-feel decisions to data-driven strategy across all regions." — VP of Sales</p>
+  </div>
+
+  <!-- 9. Tools & Technologies Summary -->
+  <div class="section-card">
+    <div class="section-title"><i class="fas fa-tools"></i> Tools & Technologies Used</div>
+    <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+      <span class="badge" style="background:#EFF6FF;">Power BI Desktop</span>
+      <span class="badge" style="background:#EFF6FF;">Power Query (M Language)</span>
+      <span class="badge" style="background:#EFF6FF;">DAX</span>
+      <span class="badge" style="background:#EFF6FF;">SQL Server (Import Mode)</span>
+      <span class="badge" style="background:#EFF6FF;">Excel (Folder Connector)</span>
+      <span class="badge" style="background:#EFF6FF;">Power BI Service (Sharing)</span>
+      <span class="badge" style="background:#EFF6FF;">Row-Level Security (RLS)</span>
+      <span class="badge" style="background:#EFF6FF;">SharePoint / OneDrive (Excel refresh)</span>
+    </div>
+  </div>
+
+  <div style="text-align: center; padding: 32px 0;">
+    <a href="#" onclick="history.back(); return false;" class="btn"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+  </div>
 </div>
 
 <footer>
-  <p>© 2026 Sudharshan Raju Solaraju — Lead Business Intelligence | Power BI • SAP Analytics • Advanced Analytics</p>
-  <p style="margin-top: 8px;"><i class="fas fa-chart-line"></i> Data-driven decisions, measurable impact.</p>
+  <p>© 2026 Sudharshan Raju Solaraju — Lead Business Intelligence | Complete Case Study: Sales Performance 360° (Excel + SQL Server)</p>
 </footer>
-
-<script>
-  // ---------- FIXED: SKILLS BUTTON WORKING ----------
-  // Smooth scroll for all internal navigation links (including Skills)
-  document.querySelectorAll('.nav-links a, .btn-primary, .btn-outline-custom, .btn-small').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      if (href && href.startsWith('#')) {
-        const targetId = href.substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          e.preventDefault();
-          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }
-    });
-  });
-
-  // Additionally, specifically handle the Skills link (in case of any mismatch)
-  const skillsNav = document.querySelector('.nav-skills');
-  if (skillsNav) {
-    skillsNav.addEventListener('click', function(e) {
-      e.preventDefault();
-      const skillsSection = document.getElementById('skills-section');
-      if (skillsSection) {
-        skillsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  }
-
-  const workNav = document.querySelector('.nav-work');
-  if (workNav) {
-    workNav.addEventListener('click', function(e) {
-      e.preventDefault();
-      const projectsSection = document.getElementById('projects');
-      if (projectsSection) {
-        projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-  }
-
-  // demo case study alerts (non-intrusive)
-  const caseBtns = document.querySelectorAll('.demo-case');
-  caseBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      alert("📊 Full case study available upon request — includes DAX scripts, data model, and interactive dashboard preview.");
-    });
-  });
-
-  // AI insights rotation - premium interactive
-  const insights = [
-    "“SAP Analytics Cloud forecast: raw material costs +12% next quarter. Recommendation: strategic hedging and supplier renegotiation.”",
-    "“Patient readmission rates for cardiac patients dropped 11% after predictive intervention models were embedded into dashboards.”",
-    "“Inventory turnover decreased 14% for slow-moving SKUs. AI-driven safety stock recalibration suggested.”",
-    "“Spend analytics: 23% of procurement is non-contracted. Potential savings of 8-10% with vendor consolidation.”",
-    "“Healthcare ops: bed occupancy optimization could reduce wait times by 18% using real-time admission predictions.”"
-  ];
-  let idx = 0;
-  const insightSpan = document.getElementById('dynamicInsight');
-  const insightBtn = document.getElementById('newInsightBtn');
-  if(insightBtn) {
-    insightBtn.addEventListener('click', () => {
-      idx = (idx + 1) % insights.length;
-      insightSpan.textContent = insights[idx];
-      insightBtn.innerHTML = '<i class="fas fa-check"></i> Insight updated';
-      setTimeout(() => { insightBtn.innerHTML = '<i class="fas fa-sync-alt"></i> Generate new insight'; }, 1500);
-    });
-  }
-
-  // copy email interactive
-  const copyBtn = document.getElementById('copyEmailBtn');
-  const msgSpan = document.getElementById('copyMessage');
-  if(copyBtn) {
-    copyBtn.addEventListener('click', async (e) => {
-      e.preventDefault();
-      try {
-        await navigator.clipboard.writeText('Sudhus.raju@gmail.com');
-        msgSpan.textContent = '✅ Email copied to clipboard!';
-        setTimeout(() => msgSpan.textContent = '', 2000);
-      } catch {
-        msgSpan.textContent = '⚠️ manual copy: Sudhus.raju@gmail.com';
-        setTimeout(() => msgSpan.textContent = '', 2000);
-      }
-    });
-  }
-
-  // linkedin demo
-  const linkedinMock = document.getElementById('linkedInMock');
-  if(linkedinMock) {
-    linkedinMock.addEventListener('click', (e) => {
-      e.preventDefault();
-      alert('🔗 LinkedIn profile: Sudharshan Raju Solaraju — Lead BI & Analytics Architect (14+ years)');
-    });
-  }
-</script>
 
 </body>
 </html>
